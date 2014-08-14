@@ -34,6 +34,10 @@ abstract class AbstractElement {
 	 * @return AbstractElement|null
 	 */
 	public function getPreviousSibling() {
+		if( !$this->parentElement ) {
+			return null; //throw exception?
+		}
+
 		return $this->parentElement->getPreviousSiblingOf($this);
 	}
 
@@ -41,6 +45,10 @@ abstract class AbstractElement {
 	 * @return AbstractElement|null
 	 */
 	public function getNextSibling() {
+		if( !$this->parentElement ) {
+			return null; //throw exception?
+		}
+
 		return $this->parentElement->getNextSiblingOf($this);
 	}
 
