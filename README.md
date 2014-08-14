@@ -26,14 +26,22 @@ Convert the DOM to Markdown
 
 #### Method: `AbstractElement->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `AbstractElement->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -43,6 +51,10 @@ Convert the DOM to Markdown
 ---
 
 #### Method: `AbstractElement->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -152,14 +164,22 @@ Inject One Or More Elements
 
 #### Method: `AbstractNestingElement->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `AbstractNestingElement->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -169,6 +189,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `AbstractNestingElement->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -195,14 +219,22 @@ Inject One Or More Elements
 
 #### Method: `Anchor->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `Anchor->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -212,6 +244,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `Anchor->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -238,14 +274,22 @@ Inject One Or More Elements
 
 #### Method: `Code->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `Code->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -255,6 +299,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `Code->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -281,14 +329,22 @@ Inject One Or More Elements
 
 #### Method: `CodeBlock->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `CodeBlock->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -298,6 +354,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `CodeBlock->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -405,14 +465,22 @@ Inject One Or More Elements
 
 #### Method: `DocumentDepth->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `DocumentDepth->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -422,6 +490,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `DocumentDepth->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -529,14 +601,22 @@ Inject One Or More Elements
 
 #### Method: `Emphasis->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `Emphasis->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -546,6 +626,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `Emphasis->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -653,14 +737,22 @@ Inject One Or More Elements
 
 #### Method: `Header->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `Header->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -670,6 +762,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `Header->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -697,14 +793,22 @@ Convert the DOM to Markdown
 
 #### Method: `HorizontalRule->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `HorizontalRule->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -714,6 +818,10 @@ Convert the DOM to Markdown
 ---
 
 #### Method: `HorizontalRule->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -740,14 +848,22 @@ Convert the DOM to Markdown
 
 #### Method: `Image->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `Image->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -757,6 +873,10 @@ Convert the DOM to Markdown
 ---
 
 #### Method: `Image->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -866,14 +986,22 @@ Inject One Or More Elements
 
 #### Method: `ListOrdered->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `ListOrdered->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -883,6 +1011,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `ListOrdered->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -992,14 +1124,22 @@ Inject One Or More Elements
 
 #### Method: `ListUnordered->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `ListUnordered->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -1009,6 +1149,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `ListUnordered->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -1116,14 +1260,22 @@ Inject One Or More Elements
 
 #### Method: `Paragraph->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `Paragraph->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -1133,6 +1285,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `Paragraph->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -1240,14 +1396,22 @@ Inject One Or More Elements
 
 #### Method: `Strong->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `Strong->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -1257,6 +1421,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `Strong->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 
@@ -1283,14 +1451,22 @@ Inject One Or More Elements
 
 #### Method: `Text->getParentElement()`
 
+Get the Elements Parent or Null if Top Level  
+  
+
+
 ##### Returns:
 
-- ***null***
+- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 
 ---
 
 #### Method: `Text->getPreviousSibling()`
+
+Get the Current Elements Previous Sibling  
+  
+
 
 ##### Returns:
 
@@ -1300,6 +1476,10 @@ Inject One Or More Elements
 ---
 
 #### Method: `Text->getNextSibling()`
+
+Get the Current Elements Next Sibling  
+  
+
 
 ##### Returns:
 

@@ -26,13 +26,17 @@ abstract class AbstractElement {
 	}
 
 	/**
-	 * @return null
+	 * Get the Elements Parent or Null if Top Level
+	 *
+	 * @return AbstractElement|null
 	 */
 	public function getParentElement() {
 		return $this->parentElement;
 	}
 
 	/**
+	 * Get the Current Elements Previous Sibling
+	 *
 	 * @return AbstractElement|null
 	 */
 	public function getPreviousSibling() {
@@ -44,6 +48,8 @@ abstract class AbstractElement {
 	}
 
 	/**
+	 * Get the Current Elements Next Sibling
+	 *
 	 * @return AbstractElement|null
 	 */
 	public function getNextSibling() {
