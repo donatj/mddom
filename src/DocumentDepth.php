@@ -7,7 +7,7 @@ class DocumentDepth extends AbstractNestingElement {
 	public function exportMarkdown( $fragmentLevel = 0 ) {
 		$content = trim(parent::exportMarkdown($fragmentLevel));
 
-		if( $fragmentLevel > 0 ) {
+		if( $this->getPreviousSibling() ) {
 			return "\n\n{$content}\n";
 		}
 
