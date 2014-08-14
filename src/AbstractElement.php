@@ -10,13 +10,16 @@ abstract class AbstractElement {
 	 */
 	abstract public function exportMarkdown( $fragmentLevel = 0 );
 
+	/**
+	 * @var null|AbstractNestingElement
+	 */
 	protected $parentElement = null;
 
 	/**
-	 * @param AbstractElement $element
+	 * @param AbstractNestingElement $element
 	 * @access private
 	 */
-	public function _setParent( AbstractElement $element ) {
+	public function _setParent( AbstractNestingElement $element ) {
 		$this->parentElement = $element;
 	}
 
@@ -27,6 +30,18 @@ abstract class AbstractElement {
 		return $this->parentElement;
 	}
 
+	/**
+	 * @return AbstractElement|null
+	 */
+	public function getPreviousSibling() {
+		return $this->parentElement->getPreviousSiblingOf($this);
+	}
 
+	/**
+	 * @return AbstractElement|null
+	 */
+	public function getNextSibling() {
+		return $this->parentElement->getNextSiblingOf($this);
+	}
 
 }

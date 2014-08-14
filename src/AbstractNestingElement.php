@@ -2,21 +2,25 @@
 
 namespace donatj\MDDom;
 
+// @todo might be worth figuring out if SplStack would work for this.
 abstract class AbstractNestingElement extends AbstractElement {
 
 	function __construct() {
-		call_user_func_array([$this, 'inject'], func_get_args());
+		call_user_func_array([ $this, 'inject' ], func_get_args());
 	}
-
 
 	/**
 	 * @var AbstractElement[]
 	 */
 	protected $childElements = array();
 
+	/**
+	 * Inject One Or More Elements
+	 *
+	 * @return $this
+	 * @throws \InvalidArgumentException
+	 */
 	public function inject( /* .. AbstractElement $element .. */ ) {
-
-
 		$arg_list = func_get_args();
 
 		foreach( $arg_list as $arg ) {
@@ -31,6 +35,8 @@ abstract class AbstractNestingElement extends AbstractElement {
 			$inject->_setParent($this);
 			$this->childElements[] = $inject;
 		}
+
+		return $this;
 	}
 
 	/**
@@ -49,6 +55,48 @@ abstract class AbstractNestingElement extends AbstractElement {
 		}
 
 		return $return;
+	}
+
+	/**
+	 * @param AbstractElement $element
+	 * @return AbstractElement|null
+	 */
+	public function indexOf( AbstractElement $element ) {
+		$search_result = array_search($element, $this->childElements, true);
+
+		return $search_result === false ? null : $search_result;
+	}
+
+	/**
+	 * @param $index
+	 * @return AbstractElement|null
+	 */
+	public function childAtIndex( $index ) {
+		if( $index !== null && isset($this->childElements[$index]) ) {
+			return $this->childElements[$index];
+		}
+
+		return null;
+	}
+
+	/**
+	 * @param AbstractElement $element
+	 * @return AbstractElement|null
+	 */
+	public function getNextSiblingOf( AbstractElement $element ) {
+		$index = $this->indexOf($element);
+
+		return $this->childAtIndex($index + 1);
+	}
+
+	/**
+	 * @param AbstractElement $element
+	 * @return AbstractElement|null
+	 */
+	public function getPreviousSiblingOf( AbstractElement $element ) {
+		$index = $this->indexOf($element);
+
+		return $this->childAtIndex($index - 1);
 	}
 
 }
