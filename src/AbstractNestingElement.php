@@ -40,6 +40,24 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
+	 * @param AbstractElement $element
+	 * @return bool
+	 */
+	public function removeChild( AbstractElement $element ) {
+		$index = $this->indexOf($element);
+		if( $index !== null ) {
+			unset($this->childElements[$index]);
+
+			//Remove any gaps
+			$this->childElements = array_values($this->childElements);
+
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
 	 * @param int $fragmentLevel
 	 * @return string
 	 */
