@@ -6,7 +6,7 @@ namespace donatj\MDDom;
 abstract class AbstractNestingElement extends AbstractElement {
 
 	function __construct() {
-		call_user_func_array([ $this, 'inject' ], func_get_args());
+		call_user_func_array([ $this, 'appendChild' ], func_get_args());
 	}
 
 	/**
@@ -20,7 +20,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 	 * @return $this
 	 * @throws \InvalidArgumentException
 	 */
-	public function inject( /* .. AbstractElement $element .. */ ) {
+	public function appendChild( /* .. AbstractElement $element .. */ ) {
 		$arg_list = func_get_args();
 
 		foreach( $arg_list as $arg ) {
