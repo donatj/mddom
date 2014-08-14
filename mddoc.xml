@@ -1,0 +1,12 @@
+<mddoc>
+	<docpage target="README.md" autoloader="psr0" autoloader-root="src">
+		<section title="MDDom - Markdown DOM">
+			<text>
+				A Simple Easy To Use Markdown DOM
+			</text>
+			<section title="Documentation">
+				<recursiveDirectory name="src"/>
+			</section>
+		</section>
+	</docpage>
+</mddoc>
