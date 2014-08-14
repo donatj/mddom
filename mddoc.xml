@@ -1,5 +1,5 @@
 <mddoc>
-	<docpage target="README.md" autoloader="psr0" autoloader-root="src">
+	<docpage target="README.md" autoloader="psr4" autoloader-root="src" autoloader-root-namespace="donatj\MDDom">
 		<section title="MDDom - Markdown DOM">
 			<text>
 				A Simple Easy To Use Markdown DOM

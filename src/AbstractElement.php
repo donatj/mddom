@@ -5,8 +5,10 @@ namespace donatj\MDDom;
 abstract class AbstractElement {
 
 	/**
-	 * @param int $fragmentLevel
-	 * @return string
+	 * Convert the DOM to Markdown
+	 *
+	 * @param int $fragmentLevel For internal recursion use.
+	 * @return string Markdown
 	 */
 	abstract public function exportMarkdown( $fragmentLevel = 0 );
 
