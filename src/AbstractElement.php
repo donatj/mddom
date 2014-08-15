@@ -6,14 +6,14 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
 
 abstract class AbstractElement {
 
+	abstract protected function generateMarkdown( $fragmentLevel = 0 );
+
 	/**
 	 * Convert the DOM to Markdown
 	 *
-	 * @param int $fragmentLevel For internal recursion use.
+	 * @param int $fragmentLevel Private use - recursion depth counter
 	 * @return string Markdown
 	 */
-	abstract protected function generateMarkdown( $fragmentLevel = 0 );
-
 	public function exportMarkdown( $fragmentLevel = 0 ) {
 		$output = "";
 		if( $this instanceof BlockElementInterface || $this->getPreviousSibling() instanceof BlockElementInterface ) {
