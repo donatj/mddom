@@ -14,7 +14,7 @@ Convert the DOM to Markdown
 
 ##### Parameters:
 
-- ***int*** `$fragmentLevel` - For internal recursion use.
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
 
 
 ##### Returns:
@@ -92,20 +92,6 @@ Inject One Or More Elements
 
 ---
 
-#### Method: `AbstractNestingElement->exportMarkdown($fragmentLevel)`
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel`
-
-
-##### Returns:
-
-- ***string***
-
-
----
-
 #### Method: `AbstractNestingElement->indexOf($element)`
 
 ##### Parameters:
@@ -162,6 +148,24 @@ Inject One Or More Elements
 
 ---
 
+#### Method: `AbstractNestingElement->exportMarkdown($fragmentLevel)`
+
+Convert the DOM to Markdown  
+  
+
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+---
+
 #### Method: `AbstractNestingElement->getParentElement()`
 
 Get the Elements Parent or Null if Top Level  
@@ -205,14 +209,18 @@ Get the Current Elements Next Sibling
 
 #### Method: `Anchor->exportMarkdown($fragmentLevel)`
 
+Convert the DOM to Markdown  
+  
+
+
 ##### Parameters:
 
-- ***int*** `$fragmentLevel`
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
 
 
 ##### Returns:
 
-- ***string***
+- ***string*** - Markdown
 
 
 ---
@@ -260,14 +268,18 @@ Get the Current Elements Next Sibling
 
 #### Method: `Code->exportMarkdown($fragmentLevel)`
 
+Convert the DOM to Markdown  
+  
+
+
 ##### Parameters:
 
-- ***int*** `$fragmentLevel`
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
 
 
 ##### Returns:
 
-- ***string***
+- ***string*** - Markdown
 
 
 ---
@@ -315,14 +327,18 @@ Get the Current Elements Next Sibling
 
 #### Method: `CodeBlock->exportMarkdown($fragmentLevel)`
 
+Convert the DOM to Markdown  
+  
+
+
 ##### Parameters:
 
-- ***int*** `$fragmentLevel`
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
 
 
 ##### Returns:
 
-- ***string***
+- ***string*** - Markdown
 
 
 ---
@@ -364,18 +380,6 @@ Get the Current Elements Next Sibling
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ### Class: DocumentDepth \[ `\donatj\MDDom` \]
-
-#### Method: `DocumentDepth->exportMarkdown($fragmentLevel)`
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel`
-
-
-##### Returns:
-
-- ***string***
-
 
 #### Undocumented Method: `DocumentDepth->__construct()`
 ---
@@ -463,6 +467,24 @@ Inject One Or More Elements
 
 ---
 
+#### Method: `DocumentDepth->exportMarkdown($fragmentLevel)`
+
+Convert the DOM to Markdown  
+  
+
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+---
+
 #### Method: `DocumentDepth->getParentElement()`
 
 Get the Elements Parent or Null if Top Level  
@@ -500,18 +522,6 @@ Get the Current Elements Next Sibling
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ### Class: Emphasis \[ `\donatj\MDDom` \]
-
-#### Method: `Emphasis->exportMarkdown($fragmentLevel)`
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel`
-
-
-##### Returns:
-
-- ***string***
-
 
 #### Undocumented Method: `Emphasis->__construct()`
 ---
@@ -599,6 +609,24 @@ Inject One Or More Elements
 
 ---
 
+#### Method: `Emphasis->exportMarkdown($fragmentLevel)`
+
+Convert the DOM to Markdown  
+  
+
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+---
+
 #### Method: `Emphasis->getParentElement()`
 
 Get the Elements Parent or Null if Top Level  
@@ -636,18 +664,6 @@ Get the Current Elements Next Sibling
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ### Class: Header \[ `\donatj\MDDom` \]
-
-#### Method: `Header->exportMarkdown($fragmentLevel)`
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel`
-
-
-##### Returns:
-
-- ***string***
-
 
 #### Undocumented Method: `Header->__construct()`
 ---
@@ -735,6 +751,24 @@ Inject One Or More Elements
 
 ---
 
+#### Method: `Header->exportMarkdown($fragmentLevel)`
+
+Convert the DOM to Markdown  
+  
+
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+---
+
 #### Method: `Header->getParentElement()`
 
 Get the Elements Parent or Null if Top Level  
@@ -781,7 +815,7 @@ Convert the DOM to Markdown
 
 ##### Parameters:
 
-- ***int*** `$fragmentLevel` - For internal recursion use.
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
 
 
 ##### Returns:
@@ -834,14 +868,18 @@ Get the Current Elements Next Sibling
 
 #### Method: `Image->exportMarkdown($fragmentLevel)`
 
+Convert the DOM to Markdown  
+  
+
+
 ##### Parameters:
 
-- ***int*** `$fragmentLevel`
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
 
 
 ##### Returns:
 
-- ***string***
+- ***string*** - Markdown
 
 
 ---
@@ -882,6 +920,8 @@ Get the Current Elements Next Sibling
 
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
+### Class: BlockElementInterface \[ `\donatj\MDDom\Interfaces` \]
+
 ### Class: ListOrdered \[ `\donatj\MDDom` \]
 
 #### Undocumented Method: `ListOrdered->__construct()`
@@ -910,20 +950,6 @@ Inject One Or More Elements
 ##### Returns:
 
 - ***bool***
-
-
----
-
-#### Method: `ListOrdered->exportMarkdown($fragmentLevel)`
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel`
-
-
-##### Returns:
-
-- ***string***
 
 
 ---
@@ -980,6 +1006,24 @@ Inject One Or More Elements
 ##### Returns:
 
 - ***\donatj\MDDom\AbstractElement*** | ***null***
+
+
+---
+
+#### Method: `ListOrdered->exportMarkdown($fragmentLevel)`
+
+Convert the DOM to Markdown  
+  
+
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+
+##### Returns:
+
+- ***string*** - Markdown
 
 
 ---
@@ -1052,20 +1096,6 @@ Inject One Or More Elements
 
 ---
 
-#### Method: `ListUnordered->exportMarkdown($fragmentLevel)`
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel`
-
-
-##### Returns:
-
-- ***string***
-
-
----
-
 #### Method: `ListUnordered->indexOf($element)`
 
 ##### Parameters:
@@ -1122,6 +1152,24 @@ Inject One Or More Elements
 
 ---
 
+#### Method: `ListUnordered->exportMarkdown($fragmentLevel)`
+
+Convert the DOM to Markdown  
+  
+
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+---
+
 #### Method: `ListUnordered->getParentElement()`
 
 Get the Elements Parent or Null if Top Level  
@@ -1159,18 +1207,6 @@ Get the Current Elements Next Sibling
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ### Class: Paragraph \[ `\donatj\MDDom` \]
-
-#### Method: `Paragraph->exportMarkdown($fragmentLevel)`
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel`
-
-
-##### Returns:
-
-- ***string***
-
 
 #### Undocumented Method: `Paragraph->__construct()`
 ---
@@ -1258,6 +1294,24 @@ Inject One Or More Elements
 
 ---
 
+#### Method: `Paragraph->exportMarkdown($fragmentLevel)`
+
+Convert the DOM to Markdown  
+  
+
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+---
+
 #### Method: `Paragraph->getParentElement()`
 
 Get the Elements Parent or Null if Top Level  
@@ -1295,18 +1349,6 @@ Get the Current Elements Next Sibling
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ### Class: Strong \[ `\donatj\MDDom` \]
-
-#### Method: `Strong->exportMarkdown($fragmentLevel)`
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel`
-
-
-##### Returns:
-
-- ***string***
-
 
 #### Undocumented Method: `Strong->__construct()`
 ---
@@ -1394,6 +1436,24 @@ Inject One Or More Elements
 
 ---
 
+#### Method: `Strong->exportMarkdown($fragmentLevel)`
+
+Convert the DOM to Markdown  
+  
+
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+---
+
 #### Method: `Strong->getParentElement()`
 
 Get the Elements Parent or Null if Top Level  
@@ -1437,14 +1497,18 @@ Get the Current Elements Next Sibling
 
 #### Method: `Text->exportMarkdown($fragmentLevel)`
 
+Convert the DOM to Markdown  
+  
+
+
 ##### Parameters:
 
-- ***int*** `$fragmentLevel`
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
 
 
 ##### Returns:
 
-- ***string***
+- ***string*** - Markdown
 
 
 ---
