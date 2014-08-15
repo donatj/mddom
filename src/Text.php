@@ -2,9 +2,7 @@
 
 namespace donatj\MDDom;
 
-use donatj\MDDom\Interfaces\InlineElementInterface;
-
-class Text extends AbstractElement implements InlineElementInterface {
+class Text extends AbstractElement {
 
 	protected $text;
 

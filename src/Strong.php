@@ -2,9 +2,7 @@
 
 namespace donatj\MDDom;
 
-use donatj\MDDom\Interfaces\InlineElementInterface;
-
-class Strong extends AbstractNestingElement implements InlineElementInterface {
+class Strong extends AbstractNestingElement {
 
 	protected function generateMarkdown( $fragmentLevel = 0 ) {
 		$return = "**";

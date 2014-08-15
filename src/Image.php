@@ -2,9 +2,7 @@
 
 namespace donatj\MDDom;
 
-use donatj\MDDom\Interfaces\InlineElementInterface;
-
-class Image extends AbstractElement implements InlineElementInterface {
+class Image extends AbstractElement {
 
 	protected $src;
 	protected $alt;
