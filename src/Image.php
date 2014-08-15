@@ -2,7 +2,9 @@
 
 namespace donatj\MDDom;
 
-class Image extends AbstractElement {
+use donatj\MDDom\Interfaces\InlineElementInterface;
+
+class Image extends AbstractElement implements InlineElementInterface {
 
 	protected $src;
 	protected $alt;
@@ -18,7 +20,7 @@ class Image extends AbstractElement {
 	 * @param int $fragmentLevel
 	 * @return string
 	 */
-	public function exportMarkdown( $fragmentLevel = 0 ) {
+	protected function generateMarkdown( $fragmentLevel = 0 ) {
 		$title = $this->title ? ' "' . $this->title . '"' : '';
 
 		return "![{$this->alt}]({$this->src}{$title})";

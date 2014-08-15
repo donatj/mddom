@@ -2,6 +2,8 @@
 
 namespace donatj\MDDom;
 
+use donatj\MDDom\Interfaces\BlockElementInterface;
+
 abstract class AbstractElement {
 
 	/**
@@ -10,7 +12,18 @@ abstract class AbstractElement {
 	 * @param int $fragmentLevel For internal recursion use.
 	 * @return string Markdown
 	 */
-	abstract public function exportMarkdown( $fragmentLevel = 0 );
+	abstract protected function generateMarkdown( $fragmentLevel = 0 );
+
+	public function exportMarkdown( $fragmentLevel = 0 ) {
+		$output = "";
+		if( $this instanceof BlockElementInterface || $this->getPreviousSibling() instanceof BlockElementInterface ) {
+			$output .= "\n\n";
+		}
+
+		$output .= $this->generateMarkdown($fragmentLevel);
+
+		return $output;
+	}
 
 	/**
 	 * @var null|AbstractNestingElement

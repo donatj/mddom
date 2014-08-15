@@ -2,7 +2,9 @@
 
 namespace donatj\MDDom;
 
-class Text extends AbstractElement {
+use donatj\MDDom\Interfaces\InlineElementInterface;
+
+class Text extends AbstractElement implements InlineElementInterface {
 
 	protected $text;
 
@@ -14,7 +16,7 @@ class Text extends AbstractElement {
 	 * @param int $fragmentLevel
 	 * @return string
 	 */
-	public function exportMarkdown( $fragmentLevel = 0 ) {
+	protected function generateMarkdown( $fragmentLevel = 0 ) {
 		return $this->text;
 	}
 

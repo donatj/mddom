@@ -2,14 +2,12 @@
 
 namespace donatj\MDDom;
 
-class Header extends AbstractNestingElement {
+use donatj\MDDom\Interfaces\BlockElementInterface;
 
-	public function exportMarkdown( $fragmentLevel = 0 ) {
-		$data = str_repeat("#", $fragmentLevel + 1) . " " . parent::exportMarkdown($fragmentLevel) . "\n\n";
+class Header extends AbstractNestingElement implements BlockElementInterface {
 
-		if($this->getPreviousSibling()) {
-			$data = "\n\n" . $data;
-		}
+	protected function generateMarkdown( $fragmentLevel = 0 ) {
+		$data = str_repeat("#", $fragmentLevel + 1) . " " . parent::generateMarkdown($fragmentLevel);
 
 		return $data;
 	}

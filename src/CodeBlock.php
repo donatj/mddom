@@ -2,21 +2,24 @@
 
 namespace donatj\MDDom;
 
-class CodeBlock extends Code {
+use donatj\MDDom\Interfaces\BlockElementInterface;
 
+class CodeBlock extends AbstractElement implements BlockElementInterface {
+
+	protected $source;
 	protected $language;
 
 	function __construct( $source, $language = null ) {
+		$this->source   = $source;
 		$this->language = $language;
-		parent::__construct($source);
 	}
 
 	/**
 	 * @param int $fragmentLevel
 	 * @return string
 	 */
-	public function exportMarkdown( $fragmentLevel = 0 ) {
-		return "\n\n```{$this->language}\n{$this->source}\n```\n";
+	protected function generateMarkdown( $fragmentLevel = 0 ) {
+		return "```{$this->language}\n{$this->source}\n```";
 
 	}
 

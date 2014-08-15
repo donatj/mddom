@@ -4,14 +4,10 @@ namespace donatj\MDDom;
 
 class DocumentDepth extends AbstractNestingElement {
 
-	public function exportMarkdown( $fragmentLevel = 0 ) {
-		$content = trim(parent::exportMarkdown($fragmentLevel));
+	protected function generateMarkdown( $fragmentLevel = 0 ) {
+		$content = trim(parent::generateMarkdown($fragmentLevel));
 
-		if( $this->getPreviousSibling() ) {
-			return "\n\n{$content}\n";
-		}
-
-		return $content . "\n";
+		return $content;
 
 	}
 

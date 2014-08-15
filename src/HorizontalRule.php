@@ -2,10 +2,12 @@
 
 namespace donatj\MDDom;
 
-class HorizontalRule extends AbstractElement {
+use donatj\MDDom\Interfaces\BlockElementInterface;
 
-	public function exportMarkdown( $fragmentLevel = 0 ) {
-		return "\n\n---\n\n";
+class HorizontalRule extends AbstractElement implements BlockElementInterface {
+
+	protected function generateMarkdown( $fragmentLevel = 0 ) {
+		return '---------------------------------------';
 	}
 
 }

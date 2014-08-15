@@ -14,7 +14,7 @@ class Code extends AbstractElement {
 	 * @param int $fragmentLevel
 	 * @return string
 	 */
-	public function exportMarkdown( $fragmentLevel = 0 ) {
+	protected function generateMarkdown( $fragmentLevel = 0 ) {
 		return "`{$this->source}`";
 	}
 

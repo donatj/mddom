@@ -4,9 +4,9 @@ namespace donatj\MDDom;
 
 class Emphasis extends AbstractNestingElement {
 
-	public function exportMarkdown( $fragmentLevel = 0 ) {
+	protected function generateMarkdown( $fragmentLevel = 0 ) {
 		$return = "*";
-		$return .= parent::exportMarkdown($fragmentLevel);
+		$return .= parent::generateMarkdown($fragmentLevel);
 		$return .= "*";
 
 		return $return;
