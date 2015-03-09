@@ -20,7 +20,7 @@ abstract class AbstractElement {
 			$output .= "\n\n";
 		}
 
-		$output .= $this->generateMarkdown($fragmentLevel);
+		$output .= ltrim($this->generateMarkdown($fragmentLevel), "\n");
 
 		return $output;
 	}
