@@ -17,10 +17,12 @@ abstract class AbstractNestingElement extends AbstractElement {
 	/**
 	 * Inject One Or More Elements
 	 *
+	 * @param AbstractElement|int|float|string $child,... Child Elements to Append
 	 * @return $this
+	 *
 	 * @throws \InvalidArgumentException
 	 */
-	public function appendChild( /* .. AbstractElement $element .. */ ) {
+	public function appendChild( $child = null /* .. AbstractElement $element .. */ ) {
 		$arg_list = func_get_args();
 
 		foreach( $arg_list as $arg ) {
