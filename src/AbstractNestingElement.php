@@ -88,7 +88,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
-	 * @param $index
+	 * @param integer $index
 	 * @return AbstractElement|null
 	 */
 	public function childAtIndex( $index ) {
