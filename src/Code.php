@@ -2,10 +2,23 @@
 
 namespace donatj\MDDom;
 
+/**
+ * Inline Code Element
+ *
+ * Example:
+ *
+ * 	`<br />`
+ *
+ * @package donatj\MDDom
+ */
 class Code extends AbstractElement {
 
+	/** @var string */
 	protected $source;
 
+	/**
+	 * @param string $source
+	 */
 	function __construct( $source ) {
 		$this->source = $source;
 	}

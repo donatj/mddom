@@ -2,10 +2,19 @@
 
 namespace donatj\MDDom;
 
+/**
+ * Markdown Raw Text Element
+ *
+ * @package donatj\MDDom
+ */
 class Text extends AbstractElement {
 
+	/** @var string */
 	protected $text;
 
+	/**
+	 * @param string $text
+	 */
 	function __construct( $text ) {
 		$this->text = $text;
 	}

@@ -42,8 +42,10 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
+	 * Remove a child element
+	 *
 	 * @param AbstractElement $element
-	 * @return bool
+	 * @return bool False if the given element was not found.
 	 */
 	public function removeChild( AbstractElement $element ) {
 		$index = $this->indexOf($element);
@@ -78,8 +80,10 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
+	 * Get the index of a child element or null if not found.
+	 *
 	 * @param AbstractElement $element
-	 * @return AbstractElement|null
+	 * @return int|null
 	 */
 	public function indexOf( AbstractElement $element ) {
 		$search_result = array_search($element, $this->childElements, true);
@@ -88,6 +92,8 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
+	 * Gets the child element at a given index or null if not found.
+	 *
 	 * @param integer $index
 	 * @return AbstractElement|null
 	 */
@@ -100,6 +106,8 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
+	 * Get the next sibling of a given child element or null if not found
+	 *
 	 * @param AbstractElement $element
 	 * @return AbstractElement|null
 	 */
@@ -110,6 +118,8 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
+	 * Get the previous sibling of a given child element or null if not found
+	 *
 	 * @param AbstractElement $element
 	 * @return AbstractElement|null
 	 */

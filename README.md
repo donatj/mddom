@@ -6,6 +6,8 @@ A Simple Easy To Use Markdown DOM
 
 ### Class: \donatj\MDDom\Document
 
+Document Root
+
 
 
 #### Undocumented Method: `Document->__construct()`
@@ -36,13 +38,15 @@ Inject One Or More Elements
 function removeChild($element)
 ```
 
+Remove a child element
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***bool***
+- ***bool*** - False if the given element was not found.
 
 ---
 
@@ -52,13 +56,15 @@ function removeChild($element)
 function indexOf($element)
 ```
 
+Get the index of a child element or null if not found.
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***\donatj\MDDom\AbstractElement*** | ***null***
+- ***int*** | ***null***
 
 ---
 
@@ -67,6 +73,8 @@ function indexOf($element)
 ```php
 function childAtIndex($index)
 ```
+
+Gets the child element at a given index or null if not found.
 
 ##### Parameters:
 
@@ -84,6 +92,8 @@ function childAtIndex($index)
 function getNextSiblingOf($element)
 ```
 
+Get the next sibling of a given child element or null if not found
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
@@ -99,6 +109,8 @@ function getNextSiblingOf($element)
 ```php
 function getPreviousSiblingOf($element)
 ```
+
+Get the previous sibling of a given child element or null if not found
 
 ##### Parameters:
 
@@ -172,9 +184,21 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\Code
 
+Inline Code Element
 
+Example:
 
-#### Undocumented Method: `Code->__construct($source)`
+	`<br />`
+
+#### Method: Code->__construct
+
+```php
+function __construct($source)
+```
+
+##### Parameters:
+
+- ***string*** `$source`
 
 ---
 
@@ -240,6 +264,8 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\Paragraph
 
+Paragraph Element
+
 
 
 #### Undocumented Method: `Paragraph->__construct()`
@@ -270,13 +296,15 @@ Inject One Or More Elements
 function removeChild($element)
 ```
 
+Remove a child element
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***bool***
+- ***bool*** - False if the given element was not found.
 
 ---
 
@@ -286,13 +314,15 @@ function removeChild($element)
 function indexOf($element)
 ```
 
+Get the index of a child element or null if not found.
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***\donatj\MDDom\AbstractElement*** | ***null***
+- ***int*** | ***null***
 
 ---
 
@@ -301,6 +331,8 @@ function indexOf($element)
 ```php
 function childAtIndex($index)
 ```
+
+Gets the child element at a given index or null if not found.
 
 ##### Parameters:
 
@@ -318,6 +350,8 @@ function childAtIndex($index)
 function getNextSiblingOf($element)
 ```
 
+Get the next sibling of a given child element or null if not found
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
@@ -333,6 +367,8 @@ function getNextSiblingOf($element)
 ```php
 function getPreviousSiblingOf($element)
 ```
+
+Get the previous sibling of a given child element or null if not found
 
 ##### Parameters:
 
@@ -498,13 +534,15 @@ Inject One Or More Elements
 function removeChild($element)
 ```
 
+Remove a child element
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***bool***
+- ***bool*** - False if the given element was not found.
 
 ---
 
@@ -514,13 +552,15 @@ function removeChild($element)
 function indexOf($element)
 ```
 
+Get the index of a child element or null if not found.
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***\donatj\MDDom\AbstractElement*** | ***null***
+- ***int*** | ***null***
 
 ---
 
@@ -529,6 +569,8 @@ function indexOf($element)
 ```php
 function childAtIndex($index)
 ```
+
+Gets the child element at a given index or null if not found.
 
 ##### Parameters:
 
@@ -546,6 +588,8 @@ function childAtIndex($index)
 function getNextSiblingOf($element)
 ```
 
+Get the next sibling of a given child element or null if not found
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
@@ -561,6 +605,8 @@ function getNextSiblingOf($element)
 ```php
 function getPreviousSiblingOf($element)
 ```
+
+Get the previous sibling of a given child element or null if not found
 
 ##### Parameters:
 
@@ -634,6 +680,12 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\Strong
 
+Strong Element
+
+Example:
+
+	**bold**
+
 
 
 #### Undocumented Method: `Strong->__construct()`
@@ -664,13 +716,15 @@ Inject One Or More Elements
 function removeChild($element)
 ```
 
+Remove a child element
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***bool***
+- ***bool*** - False if the given element was not found.
 
 ---
 
@@ -680,13 +734,15 @@ function removeChild($element)
 function indexOf($element)
 ```
 
+Get the index of a child element or null if not found.
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***\donatj\MDDom\AbstractElement*** | ***null***
+- ***int*** | ***null***
 
 ---
 
@@ -695,6 +751,8 @@ function indexOf($element)
 ```php
 function childAtIndex($index)
 ```
+
+Gets the child element at a given index or null if not found.
 
 ##### Parameters:
 
@@ -712,6 +770,8 @@ function childAtIndex($index)
 function getNextSiblingOf($element)
 ```
 
+Get the next sibling of a given child element or null if not found
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
@@ -727,6 +787,8 @@ function getNextSiblingOf($element)
 ```php
 function getPreviousSiblingOf($element)
 ```
+
+Get the previous sibling of a given child element or null if not found
 
 ##### Parameters:
 
@@ -800,6 +862,14 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\Header
 
+Header "H{n}" Element
+
+The {n} of the generated H element is determined by it's nesting depth within DocumentDepth's
+
+Example:
+
+	### H3 Element
+
 
 
 #### Undocumented Method: `Header->__construct()`
@@ -830,13 +900,15 @@ Inject One Or More Elements
 function removeChild($element)
 ```
 
+Remove a child element
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***bool***
+- ***bool*** - False if the given element was not found.
 
 ---
 
@@ -846,13 +918,15 @@ function removeChild($element)
 function indexOf($element)
 ```
 
+Get the index of a child element or null if not found.
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***\donatj\MDDom\AbstractElement*** | ***null***
+- ***int*** | ***null***
 
 ---
 
@@ -861,6 +935,8 @@ function indexOf($element)
 ```php
 function childAtIndex($index)
 ```
+
+Gets the child element at a given index or null if not found.
 
 ##### Parameters:
 
@@ -878,6 +954,8 @@ function childAtIndex($index)
 function getNextSiblingOf($element)
 ```
 
+Get the next sibling of a given child element or null if not found
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
@@ -893,6 +971,8 @@ function getNextSiblingOf($element)
 ```php
 function getPreviousSiblingOf($element)
 ```
+
+Get the previous sibling of a given child element or null if not found
 
 ##### Parameters:
 
@@ -966,6 +1046,12 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\Emphasis
 
+Inline Emphasis Element
+
+Example:
+
+	*italic*
+
 
 
 #### Undocumented Method: `Emphasis->__construct()`
@@ -996,13 +1082,15 @@ Inject One Or More Elements
 function removeChild($element)
 ```
 
+Remove a child element
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***bool***
+- ***bool*** - False if the given element was not found.
 
 ---
 
@@ -1012,13 +1100,15 @@ function removeChild($element)
 function indexOf($element)
 ```
 
+Get the index of a child element or null if not found.
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***\donatj\MDDom\AbstractElement*** | ***null***
+- ***int*** | ***null***
 
 ---
 
@@ -1027,6 +1117,8 @@ function indexOf($element)
 ```php
 function childAtIndex($index)
 ```
+
+Gets the child element at a given index or null if not found.
 
 ##### Parameters:
 
@@ -1044,6 +1136,8 @@ function childAtIndex($index)
 function getNextSiblingOf($element)
 ```
 
+Get the next sibling of a given child element or null if not found
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
@@ -1059,6 +1153,8 @@ function getNextSiblingOf($element)
 ```php
 function getPreviousSiblingOf($element)
 ```
+
+Get the previous sibling of a given child element or null if not found
 
 ##### Parameters:
 
@@ -1132,9 +1228,21 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\Anchor
 
+Inline Anchor "a tag" Element
 
+#### Method: Anchor->__construct
 
-#### Undocumented Method: `Anchor->__construct($href, $text [, $title = ""])`
+```php
+function __construct($href, $text [, $title = ""])
+```
+
+Anchor constructor.
+
+##### Parameters:
+
+- ***string*** `$href` - The link of the URL
+- ***string*** `$text` - The text within the a tag
+- ***string*** `$title` - Optional "hover" title value
 
 ---
 
@@ -1200,6 +1308,34 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\DocumentDepth
 
+DocumentDepth
+
+An illusory element used for structuring your document into smaller parts.
+
+The H level of the `Header` is determined by it's depth within the document.
+
+For example:
+
+```php
+$doc = new \donatj\MDDom\Document;
+$doc->appendChild(
+	new \donatj\MDDom\Header('Level 1')
+)->appendChild(
+	(new \donatj\MDDom\DocumentDepth)->appendChild(
+		new \donatj\MDDom\Header('Level 2')
+	)
+);
+echo $doc->exportMarkdown();
+```
+
+outputs:
+
+```
+# Level 1
+
+## Level 2
+```
+
 
 
 #### Undocumented Method: `DocumentDepth->__construct()`
@@ -1230,13 +1366,15 @@ Inject One Or More Elements
 function removeChild($element)
 ```
 
+Remove a child element
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***bool***
+- ***bool*** - False if the given element was not found.
 
 ---
 
@@ -1246,13 +1384,15 @@ function removeChild($element)
 function indexOf($element)
 ```
 
+Get the index of a child element or null if not found.
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
 
 ##### Returns:
 
-- ***\donatj\MDDom\AbstractElement*** | ***null***
+- ***int*** | ***null***
 
 ---
 
@@ -1261,6 +1401,8 @@ function indexOf($element)
 ```php
 function childAtIndex($index)
 ```
+
+Gets the child element at a given index or null if not found.
 
 ##### Parameters:
 
@@ -1278,6 +1420,8 @@ function childAtIndex($index)
 function getNextSiblingOf($element)
 ```
 
+Get the next sibling of a given child element or null if not found
+
 ##### Parameters:
 
 - ***\donatj\MDDom\AbstractElement*** `$element`
@@ -1293,6 +1437,8 @@ function getNextSiblingOf($element)
 ```php
 function getPreviousSiblingOf($element)
 ```
+
+Get the previous sibling of a given child element or null if not found
 
 ##### Parameters:
 
@@ -1366,6 +1512,12 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\HorizontalRule
 
+Block Level Horizontal Rule Element
+
+Example:
+
+	---
+
 #### Method: HorizontalRule->exportMarkdown
 
 ```php
@@ -1428,9 +1580,26 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\CodeBlock
 
+Block Level Code Element
 
+Example:
 
-#### Undocumented Method: `CodeBlock->__construct($source [, $language = null])`
+	```php
+	echo "Hello World"
+	```
+
+#### Method: CodeBlock->__construct
+
+```php
+function __construct($source [, $language = null])
+```
+
+CodeBlock constructor.
+
+##### Parameters:
+
+- ***string*** `$source` - Source code
+- ***string*** | ***null*** `$language` - Optional language name, e.g. php, js, ruby etc
 
 ---
 
@@ -1496,9 +1665,17 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\Text
 
+Markdown Raw Text Element
 
+#### Method: Text->__construct
 
-#### Undocumented Method: `Text->__construct($text)`
+```php
+function __construct($text)
+```
+
+##### Parameters:
+
+- ***string*** `$text`
 
 ---
 
@@ -1564,9 +1741,21 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\Image
 
+Image Element
 
+#### Method: Image->__construct
 
-#### Undocumented Method: `Image->__construct($src, $alt [, $title = ""])`
+```php
+function __construct($src, $alt [, $title = ""])
+```
+
+Image constructor.
+
+##### Parameters:
+
+- ***string*** `$src` - URL of given image
+- ***string*** `$alt` - Alt Text for Accessibility
+- ***string*** `$title` - Optional "hover" title value
 
 ---
 
