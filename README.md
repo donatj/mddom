@@ -8,9 +8,17 @@ A Simple Easy To Use Markdown DOM
 
 Document Root
 
+#### Method: Document->__construct
 
+```php
+function __construct([ $child = null])
+```
 
-#### Undocumented Method: `Document->__construct()`
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
 
 ---
 
@@ -266,9 +274,17 @@ Get the Current Elements Next Sibling
 
 Paragraph Element
 
+#### Method: Paragraph->__construct
 
+```php
+function __construct([ $child = null])
+```
 
-#### Undocumented Method: `Paragraph->__construct()`
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
 
 ---
 
@@ -504,9 +520,17 @@ Get the Current Elements Next Sibling
 
 ### Class: \donatj\MDDom\AbstractNestingElement
 
+#### Method: AbstractNestingElement->__construct
 
+```php
+function __construct([ $child = null])
+```
 
-#### Undocumented Method: `AbstractNestingElement->__construct()`
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
 
 ---
 
@@ -686,9 +710,17 @@ Example:
 
 	**bold**
 
+#### Method: Strong->__construct
 
+```php
+function __construct([ $child = null])
+```
 
-#### Undocumented Method: `Strong->__construct()`
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
 
 ---
 
@@ -870,9 +902,17 @@ Example:
 
 	### H3 Element
 
+#### Method: Header->__construct
 
+```php
+function __construct([ $child = null])
+```
 
-#### Undocumented Method: `Header->__construct()`
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
 
 ---
 
@@ -1052,9 +1092,17 @@ Example:
 
 	*italic*
 
+#### Method: Emphasis->__construct
 
+```php
+function __construct([ $child = null])
+```
 
-#### Undocumented Method: `Emphasis->__construct()`
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
 
 ---
 
@@ -1336,9 +1384,17 @@ outputs:
 ## Level 2
 ```
 
+#### Method: DocumentDepth->__construct
 
+```php
+function __construct([ $child = null])
+```
 
-#### Undocumented Method: `DocumentDepth->__construct()`
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
 
 ---
 
