@@ -8,7 +8,7 @@ A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface
 
 ## Requirements
 
-- **php**: >=5.3.0
+- **php**: >=5.4
 
 ## Installing
 
