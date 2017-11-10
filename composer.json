@@ -1,18 +1,21 @@
 {
-	"name"       : "donatj/mddom",
+	"name": "donatj/mddom",
 	"description": "A Simple Markdown DOM",
+	"require": {
+		"php": ">=5.3.0"
+	},
 	"require-dev": {
-		"donatj/drop"    : "*",
+		"donatj/drop": "*",
 		"phpunit/phpunit": "*"
 	},
-	"license"    : "MIT",
-	"authors"    : [
+	"license": "MIT",
+	"authors": [
 		{
-			"name" : "Jesse Donat",
+			"name": "Jesse Donat",
 			"email": "donatj@gmail.com"
 		}
 	],
-	"autoload"   : {
+	"autoload": {
 		"psr-4": {
 			"donatj\\MDDom\\": "src/"
 		}
