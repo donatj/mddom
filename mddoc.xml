@@ -1,9 +1,18 @@
 <mddoc>
 	<docpage target="README.md" autoloader="psr4" autoloader-root="src" autoloader-root-namespace="donatj\MDDom">
 		<section title="MDDom - Markdown DOM">
-			<text>A Simple Easy To Use Markdown DOM</text>
-			<section title="Documentation">
-				<recursiveDirectory name="src"/>
+			<text>A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface</text>
+			<docpage target="docs/docs.md" autoloader="psr4" autoloader-root="src"
+					 autoloader-root-namespace="donatj\MockWebServer">
+				<section title="Documentation">
+					<recursiveDirectory name="src"/>
+				</section>
+			</docpage>
+			<section title="Requirements">
+				<composer-requires/>
+			</section>
+			<section title="Installing">
+				<composer-install/>
 			</section>
 		</section>
 	</docpage>
