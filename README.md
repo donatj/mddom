@@ -4,458 +4,6 @@ A Simple Easy To Use Markdown DOM
 
 ## Documentation
 
-### Class: \donatj\MDDom\Document
-
-Document Root
-
-#### Method: Document->__construct
-
-```php
-function __construct([ $child = null])
-```
-
-AbstractNestingElement constructor.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
----
-
-#### Method: Document->appendChild
-
-```php
-function appendChild([ $child = null])
-```
-
-Inject One Or More Elements
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
-##### Returns:
-
-- ***$this***
-
----
-
-#### Method: Document->removeChild
-
-```php
-function removeChild($element)
-```
-
-Remove a child element
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***bool*** - False if the given element was not found.
-
----
-
-#### Method: Document->indexOf
-
-```php
-function indexOf($element)
-```
-
-Get the index of a child element or null if not found.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: Document->childAtIndex
-
-```php
-function childAtIndex($index)
-```
-
-Gets the child element at a given index or null if not found.
-
-##### Parameters:
-
-- ***integer*** `$index`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Document->getNextSiblingOf
-
-```php
-function getNextSiblingOf($element)
-```
-
-Get the next sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Document->getPreviousSiblingOf
-
-```php
-function getPreviousSiblingOf($element)
-```
-
-Get the previous sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Document->exportMarkdown
-
-```php
-function exportMarkdown($fragmentLevel)
-```
-
-Convert the DOM to Markdown
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel` - Private use - recursion depth counter
-
-##### Returns:
-
-- ***string*** - Markdown
-
-
-
----
-
-#### Method: Document->getParentElement
-
-```php
-function getParentElement()
-```
-
-Get the Elements Parent or Null if Top Level
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Document->getPreviousSibling
-
-```php
-function getPreviousSibling()
-```
-
-Get the Current Elements Previous Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Document->getNextSibling
-
-```php
-function getNextSibling()
-```
-
-Get the Current Elements Next Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
-### Class: \donatj\MDDom\Code
-
-Inline Code Element
-
-Example:
-
-	`<br />`
-
-#### Method: Code->__construct
-
-```php
-function __construct($source)
-```
-
-##### Parameters:
-
-- ***string*** `$source`
-
----
-
-#### Method: Code->exportMarkdown
-
-```php
-function exportMarkdown($fragmentLevel)
-```
-
-Convert the DOM to Markdown
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel` - Private use - recursion depth counter
-
-##### Returns:
-
-- ***string*** - Markdown
-
-
-
----
-
-#### Method: Code->getParentElement
-
-```php
-function getParentElement()
-```
-
-Get the Elements Parent or Null if Top Level
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Code->getPreviousSibling
-
-```php
-function getPreviousSibling()
-```
-
-Get the Current Elements Previous Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Code->getNextSibling
-
-```php
-function getNextSibling()
-```
-
-Get the Current Elements Next Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
-### Class: \donatj\MDDom\Paragraph
-
-Paragraph Element
-
-#### Method: Paragraph->__construct
-
-```php
-function __construct([ $child = null])
-```
-
-AbstractNestingElement constructor.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
----
-
-#### Method: Paragraph->appendChild
-
-```php
-function appendChild([ $child = null])
-```
-
-Inject One Or More Elements
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
-##### Returns:
-
-- ***$this***
-
----
-
-#### Method: Paragraph->removeChild
-
-```php
-function removeChild($element)
-```
-
-Remove a child element
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***bool*** - False if the given element was not found.
-
----
-
-#### Method: Paragraph->indexOf
-
-```php
-function indexOf($element)
-```
-
-Get the index of a child element or null if not found.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: Paragraph->childAtIndex
-
-```php
-function childAtIndex($index)
-```
-
-Gets the child element at a given index or null if not found.
-
-##### Parameters:
-
-- ***integer*** `$index`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Paragraph->getNextSiblingOf
-
-```php
-function getNextSiblingOf($element)
-```
-
-Get the next sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Paragraph->getPreviousSiblingOf
-
-```php
-function getPreviousSiblingOf($element)
-```
-
-Get the previous sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Paragraph->exportMarkdown
-
-```php
-function exportMarkdown($fragmentLevel)
-```
-
-Convert the DOM to Markdown
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel` - Private use - recursion depth counter
-
-##### Returns:
-
-- ***string*** - Markdown
-
-
-
----
-
-#### Method: Paragraph->getParentElement
-
-```php
-function getParentElement()
-```
-
-Get the Elements Parent or Null if Top Level
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Paragraph->getPreviousSibling
-
-```php
-function getPreviousSibling()
-```
-
-Get the Current Elements Previous Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Paragraph->getNextSibling
-
-```php
-function getNextSibling()
-```
-
-Get the Current Elements Next Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
 ### Class: \donatj\MDDom\AbstractElement
 
 #### Method: AbstractElement->exportMarkdown
@@ -702,578 +250,6 @@ Get the Current Elements Next Sibling
 
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
-### Class: \donatj\MDDom\Strong
-
-Strong Element
-
-Example:
-
-	**bold**
-
-#### Method: Strong->__construct
-
-```php
-function __construct([ $child = null])
-```
-
-AbstractNestingElement constructor.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
----
-
-#### Method: Strong->appendChild
-
-```php
-function appendChild([ $child = null])
-```
-
-Inject One Or More Elements
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
-##### Returns:
-
-- ***$this***
-
----
-
-#### Method: Strong->removeChild
-
-```php
-function removeChild($element)
-```
-
-Remove a child element
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***bool*** - False if the given element was not found.
-
----
-
-#### Method: Strong->indexOf
-
-```php
-function indexOf($element)
-```
-
-Get the index of a child element or null if not found.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: Strong->childAtIndex
-
-```php
-function childAtIndex($index)
-```
-
-Gets the child element at a given index or null if not found.
-
-##### Parameters:
-
-- ***integer*** `$index`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Strong->getNextSiblingOf
-
-```php
-function getNextSiblingOf($element)
-```
-
-Get the next sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Strong->getPreviousSiblingOf
-
-```php
-function getPreviousSiblingOf($element)
-```
-
-Get the previous sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Strong->exportMarkdown
-
-```php
-function exportMarkdown($fragmentLevel)
-```
-
-Convert the DOM to Markdown
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel` - Private use - recursion depth counter
-
-##### Returns:
-
-- ***string*** - Markdown
-
-
-
----
-
-#### Method: Strong->getParentElement
-
-```php
-function getParentElement()
-```
-
-Get the Elements Parent or Null if Top Level
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Strong->getPreviousSibling
-
-```php
-function getPreviousSibling()
-```
-
-Get the Current Elements Previous Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Strong->getNextSibling
-
-```php
-function getNextSibling()
-```
-
-Get the Current Elements Next Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
-### Class: \donatj\MDDom\Header
-
-Header "H{n}" Element
-
-The {n} of the generated H element is determined by it's nesting depth within DocumentDepth's
-
-Example:
-
-	### H3 Element
-
-#### Method: Header->__construct
-
-```php
-function __construct([ $child = null])
-```
-
-AbstractNestingElement constructor.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
----
-
-#### Method: Header->appendChild
-
-```php
-function appendChild([ $child = null])
-```
-
-Inject One Or More Elements
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
-##### Returns:
-
-- ***$this***
-
----
-
-#### Method: Header->removeChild
-
-```php
-function removeChild($element)
-```
-
-Remove a child element
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***bool*** - False if the given element was not found.
-
----
-
-#### Method: Header->indexOf
-
-```php
-function indexOf($element)
-```
-
-Get the index of a child element or null if not found.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: Header->childAtIndex
-
-```php
-function childAtIndex($index)
-```
-
-Gets the child element at a given index or null if not found.
-
-##### Parameters:
-
-- ***integer*** `$index`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Header->getNextSiblingOf
-
-```php
-function getNextSiblingOf($element)
-```
-
-Get the next sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Header->getPreviousSiblingOf
-
-```php
-function getPreviousSiblingOf($element)
-```
-
-Get the previous sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Header->exportMarkdown
-
-```php
-function exportMarkdown($fragmentLevel)
-```
-
-Convert the DOM to Markdown
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel` - Private use - recursion depth counter
-
-##### Returns:
-
-- ***string*** - Markdown
-
-
-
----
-
-#### Method: Header->getParentElement
-
-```php
-function getParentElement()
-```
-
-Get the Elements Parent or Null if Top Level
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Header->getPreviousSibling
-
-```php
-function getPreviousSibling()
-```
-
-Get the Current Elements Previous Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Header->getNextSibling
-
-```php
-function getNextSibling()
-```
-
-Get the Current Elements Next Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
-### Class: \donatj\MDDom\Emphasis
-
-Inline Emphasis Element
-
-Example:
-
-	*italic*
-
-#### Method: Emphasis->__construct
-
-```php
-function __construct([ $child = null])
-```
-
-AbstractNestingElement constructor.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
----
-
-#### Method: Emphasis->appendChild
-
-```php
-function appendChild([ $child = null])
-```
-
-Inject One Or More Elements
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
-
-##### Returns:
-
-- ***$this***
-
----
-
-#### Method: Emphasis->removeChild
-
-```php
-function removeChild($element)
-```
-
-Remove a child element
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***bool*** - False if the given element was not found.
-
----
-
-#### Method: Emphasis->indexOf
-
-```php
-function indexOf($element)
-```
-
-Get the index of a child element or null if not found.
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***int*** | ***null***
-
----
-
-#### Method: Emphasis->childAtIndex
-
-```php
-function childAtIndex($index)
-```
-
-Gets the child element at a given index or null if not found.
-
-##### Parameters:
-
-- ***integer*** `$index`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Emphasis->getNextSiblingOf
-
-```php
-function getNextSiblingOf($element)
-```
-
-Get the next sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Emphasis->getPreviousSiblingOf
-
-```php
-function getPreviousSiblingOf($element)
-```
-
-Get the previous sibling of a given child element or null if not found
-
-##### Parameters:
-
-- ***\donatj\MDDom\AbstractElement*** `$element`
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Emphasis->exportMarkdown
-
-```php
-function exportMarkdown($fragmentLevel)
-```
-
-Convert the DOM to Markdown
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel` - Private use - recursion depth counter
-
-##### Returns:
-
-- ***string*** - Markdown
-
-
-
----
-
-#### Method: Emphasis->getParentElement
-
-```php
-function getParentElement()
-```
-
-Get the Elements Parent or Null if Top Level
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Emphasis->getPreviousSibling
-
-```php
-function getPreviousSibling()
-```
-
-Get the Current Elements Previous Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Emphasis->getNextSibling
-
-```php
-function getNextSibling()
-```
-
-Get the Current Elements Next Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
 ### Class: \donatj\MDDom\Anchor
 
 Inline Anchor "a tag" Element
@@ -1343,6 +319,357 @@ Get the Current Elements Previous Sibling
 ---
 
 #### Method: Anchor->getNextSibling
+
+```php
+function getNextSibling()
+```
+
+Get the Current Elements Next Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+### Class: \donatj\MDDom\Code
+
+Inline Code Element
+
+Example:
+
+	`<br />`
+
+#### Method: Code->__construct
+
+```php
+function __construct($source)
+```
+
+##### Parameters:
+
+- ***string*** `$source`
+
+---
+
+#### Method: Code->exportMarkdown
+
+```php
+function exportMarkdown($fragmentLevel)
+```
+
+Convert the DOM to Markdown
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+
+---
+
+#### Method: Code->getParentElement
+
+```php
+function getParentElement()
+```
+
+Get the Elements Parent or Null if Top Level
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Code->getPreviousSibling
+
+```php
+function getPreviousSibling()
+```
+
+Get the Current Elements Previous Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Code->getNextSibling
+
+```php
+function getNextSibling()
+```
+
+Get the Current Elements Next Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+### Class: \donatj\MDDom\CodeBlock
+
+Block Level Code Element
+
+Example:
+
+	```php
+	echo "Hello World"
+	```
+
+#### Method: CodeBlock->__construct
+
+```php
+function __construct($source [, $language = null])
+```
+
+CodeBlock constructor.
+
+##### Parameters:
+
+- ***string*** `$source` - Source code
+- ***string*** | ***null*** `$language` - Optional language name, e.g. php, js, ruby etc
+
+---
+
+#### Method: CodeBlock->exportMarkdown
+
+```php
+function exportMarkdown($fragmentLevel)
+```
+
+Convert the DOM to Markdown
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+
+---
+
+#### Method: CodeBlock->getParentElement
+
+```php
+function getParentElement()
+```
+
+Get the Elements Parent or Null if Top Level
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: CodeBlock->getPreviousSibling
+
+```php
+function getPreviousSibling()
+```
+
+Get the Current Elements Previous Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: CodeBlock->getNextSibling
+
+```php
+function getNextSibling()
+```
+
+Get the Current Elements Next Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+### Class: \donatj\MDDom\Document
+
+Document Root
+
+#### Method: Document->__construct
+
+```php
+function __construct([ $child = null])
+```
+
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+---
+
+#### Method: Document->appendChild
+
+```php
+function appendChild([ $child = null])
+```
+
+Inject One Or More Elements
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+##### Returns:
+
+- ***$this***
+
+---
+
+#### Method: Document->removeChild
+
+```php
+function removeChild($element)
+```
+
+Remove a child element
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***bool*** - False if the given element was not found.
+
+---
+
+#### Method: Document->indexOf
+
+```php
+function indexOf($element)
+```
+
+Get the index of a child element or null if not found.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: Document->childAtIndex
+
+```php
+function childAtIndex($index)
+```
+
+Gets the child element at a given index or null if not found.
+
+##### Parameters:
+
+- ***integer*** `$index`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Document->getNextSiblingOf
+
+```php
+function getNextSiblingOf($element)
+```
+
+Get the next sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Document->getPreviousSiblingOf
+
+```php
+function getPreviousSiblingOf($element)
+```
+
+Get the previous sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Document->exportMarkdown
+
+```php
+function exportMarkdown($fragmentLevel)
+```
+
+Convert the DOM to Markdown
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+
+---
+
+#### Method: Document->getParentElement
+
+```php
+function getParentElement()
+```
+
+Get the Elements Parent or Null if Top Level
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Document->getPreviousSibling
+
+```php
+function getPreviousSibling()
+```
+
+Get the Current Elements Previous Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Document->getNextSibling
 
 ```php
 function getNextSibling()
@@ -1566,6 +893,388 @@ Get the Current Elements Next Sibling
 
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
+### Class: \donatj\MDDom\Emphasis
+
+Inline Emphasis Element
+
+Example:
+
+	*italic*
+
+#### Method: Emphasis->__construct
+
+```php
+function __construct([ $child = null])
+```
+
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+---
+
+#### Method: Emphasis->appendChild
+
+```php
+function appendChild([ $child = null])
+```
+
+Inject One Or More Elements
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+##### Returns:
+
+- ***$this***
+
+---
+
+#### Method: Emphasis->removeChild
+
+```php
+function removeChild($element)
+```
+
+Remove a child element
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***bool*** - False if the given element was not found.
+
+---
+
+#### Method: Emphasis->indexOf
+
+```php
+function indexOf($element)
+```
+
+Get the index of a child element or null if not found.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: Emphasis->childAtIndex
+
+```php
+function childAtIndex($index)
+```
+
+Gets the child element at a given index or null if not found.
+
+##### Parameters:
+
+- ***integer*** `$index`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Emphasis->getNextSiblingOf
+
+```php
+function getNextSiblingOf($element)
+```
+
+Get the next sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Emphasis->getPreviousSiblingOf
+
+```php
+function getPreviousSiblingOf($element)
+```
+
+Get the previous sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Emphasis->exportMarkdown
+
+```php
+function exportMarkdown($fragmentLevel)
+```
+
+Convert the DOM to Markdown
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+
+---
+
+#### Method: Emphasis->getParentElement
+
+```php
+function getParentElement()
+```
+
+Get the Elements Parent or Null if Top Level
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Emphasis->getPreviousSibling
+
+```php
+function getPreviousSibling()
+```
+
+Get the Current Elements Previous Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Emphasis->getNextSibling
+
+```php
+function getNextSibling()
+```
+
+Get the Current Elements Next Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+### Class: \donatj\MDDom\Header
+
+Header "H{n}" Element
+
+The {n} of the generated H element is determined by it's nesting depth within DocumentDepth's
+
+Example:
+
+	### H3 Element
+
+#### Method: Header->__construct
+
+```php
+function __construct([ $child = null])
+```
+
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+---
+
+#### Method: Header->appendChild
+
+```php
+function appendChild([ $child = null])
+```
+
+Inject One Or More Elements
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+##### Returns:
+
+- ***$this***
+
+---
+
+#### Method: Header->removeChild
+
+```php
+function removeChild($element)
+```
+
+Remove a child element
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***bool*** - False if the given element was not found.
+
+---
+
+#### Method: Header->indexOf
+
+```php
+function indexOf($element)
+```
+
+Get the index of a child element or null if not found.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: Header->childAtIndex
+
+```php
+function childAtIndex($index)
+```
+
+Gets the child element at a given index or null if not found.
+
+##### Parameters:
+
+- ***integer*** `$index`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Header->getNextSiblingOf
+
+```php
+function getNextSiblingOf($element)
+```
+
+Get the next sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Header->getPreviousSiblingOf
+
+```php
+function getPreviousSiblingOf($element)
+```
+
+Get the previous sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Header->exportMarkdown
+
+```php
+function exportMarkdown($fragmentLevel)
+```
+
+Convert the DOM to Markdown
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+
+---
+
+#### Method: Header->getParentElement
+
+```php
+function getParentElement()
+```
+
+Get the Elements Parent or Null if Top Level
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Header->getPreviousSibling
+
+```php
+function getPreviousSibling()
+```
+
+Get the Current Elements Previous Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Header->getNextSibling
+
+```php
+function getNextSibling()
+```
+
+Get the Current Elements Next Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
 ### Class: \donatj\MDDom\HorizontalRule
 
 Block Level Horizontal Rule Element
@@ -1623,167 +1332,6 @@ Get the Current Elements Previous Sibling
 ---
 
 #### Method: HorizontalRule->getNextSibling
-
-```php
-function getNextSibling()
-```
-
-Get the Current Elements Next Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
-### Class: \donatj\MDDom\CodeBlock
-
-Block Level Code Element
-
-Example:
-
-	```php
-	echo "Hello World"
-	```
-
-#### Method: CodeBlock->__construct
-
-```php
-function __construct($source [, $language = null])
-```
-
-CodeBlock constructor.
-
-##### Parameters:
-
-- ***string*** `$source` - Source code
-- ***string*** | ***null*** `$language` - Optional language name, e.g. php, js, ruby etc
-
----
-
-#### Method: CodeBlock->exportMarkdown
-
-```php
-function exportMarkdown($fragmentLevel)
-```
-
-Convert the DOM to Markdown
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel` - Private use - recursion depth counter
-
-##### Returns:
-
-- ***string*** - Markdown
-
-
-
----
-
-#### Method: CodeBlock->getParentElement
-
-```php
-function getParentElement()
-```
-
-Get the Elements Parent or Null if Top Level
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: CodeBlock->getPreviousSibling
-
-```php
-function getPreviousSibling()
-```
-
-Get the Current Elements Previous Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: CodeBlock->getNextSibling
-
-```php
-function getNextSibling()
-```
-
-Get the Current Elements Next Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
-### Class: \donatj\MDDom\Text
-
-Markdown Raw Text Element
-
-#### Method: Text->__construct
-
-```php
-function __construct($text)
-```
-
-##### Parameters:
-
-- ***string*** `$text`
-
----
-
-#### Method: Text->exportMarkdown
-
-```php
-function exportMarkdown($fragmentLevel)
-```
-
-Convert the DOM to Markdown
-
-##### Parameters:
-
-- ***int*** `$fragmentLevel` - Private use - recursion depth counter
-
-##### Returns:
-
-- ***string*** - Markdown
-
-
-
----
-
-#### Method: Text->getParentElement
-
-```php
-function getParentElement()
-```
-
-Get the Elements Parent or Null if Top Level
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Text->getPreviousSibling
-
-```php
-function getPreviousSibling()
-```
-
-Get the Current Elements Previous Sibling
-
-##### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
-
----
-
-#### Method: Text->getNextSibling
 
 ```php
 function getNextSibling()
@@ -1876,3 +1424,455 @@ Get the Current Elements Next Sibling
 - ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ### Class: \donatj\MDDom\Interfaces\BlockElementInterface
+
+### Class: \donatj\MDDom\Paragraph
+
+Paragraph Element
+
+#### Method: Paragraph->__construct
+
+```php
+function __construct([ $child = null])
+```
+
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+---
+
+#### Method: Paragraph->appendChild
+
+```php
+function appendChild([ $child = null])
+```
+
+Inject One Or More Elements
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+##### Returns:
+
+- ***$this***
+
+---
+
+#### Method: Paragraph->removeChild
+
+```php
+function removeChild($element)
+```
+
+Remove a child element
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***bool*** - False if the given element was not found.
+
+---
+
+#### Method: Paragraph->indexOf
+
+```php
+function indexOf($element)
+```
+
+Get the index of a child element or null if not found.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: Paragraph->childAtIndex
+
+```php
+function childAtIndex($index)
+```
+
+Gets the child element at a given index or null if not found.
+
+##### Parameters:
+
+- ***integer*** `$index`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Paragraph->getNextSiblingOf
+
+```php
+function getNextSiblingOf($element)
+```
+
+Get the next sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Paragraph->getPreviousSiblingOf
+
+```php
+function getPreviousSiblingOf($element)
+```
+
+Get the previous sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Paragraph->exportMarkdown
+
+```php
+function exportMarkdown($fragmentLevel)
+```
+
+Convert the DOM to Markdown
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+
+---
+
+#### Method: Paragraph->getParentElement
+
+```php
+function getParentElement()
+```
+
+Get the Elements Parent or Null if Top Level
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Paragraph->getPreviousSibling
+
+```php
+function getPreviousSibling()
+```
+
+Get the Current Elements Previous Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Paragraph->getNextSibling
+
+```php
+function getNextSibling()
+```
+
+Get the Current Elements Next Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+### Class: \donatj\MDDom\Strong
+
+Strong Element
+
+Example:
+
+	**bold**
+
+#### Method: Strong->__construct
+
+```php
+function __construct([ $child = null])
+```
+
+AbstractNestingElement constructor.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+---
+
+#### Method: Strong->appendChild
+
+```php
+function appendChild([ $child = null])
+```
+
+Inject One Or More Elements
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** | ***int*** | ***float*** | ***string*** `$child,...` - Child Elements to Append
+
+##### Returns:
+
+- ***$this***
+
+---
+
+#### Method: Strong->removeChild
+
+```php
+function removeChild($element)
+```
+
+Remove a child element
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***bool*** - False if the given element was not found.
+
+---
+
+#### Method: Strong->indexOf
+
+```php
+function indexOf($element)
+```
+
+Get the index of a child element or null if not found.
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***int*** | ***null***
+
+---
+
+#### Method: Strong->childAtIndex
+
+```php
+function childAtIndex($index)
+```
+
+Gets the child element at a given index or null if not found.
+
+##### Parameters:
+
+- ***integer*** `$index`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Strong->getNextSiblingOf
+
+```php
+function getNextSiblingOf($element)
+```
+
+Get the next sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Strong->getPreviousSiblingOf
+
+```php
+function getPreviousSiblingOf($element)
+```
+
+Get the previous sibling of a given child element or null if not found
+
+##### Parameters:
+
+- ***\donatj\MDDom\AbstractElement*** `$element`
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Strong->exportMarkdown
+
+```php
+function exportMarkdown($fragmentLevel)
+```
+
+Convert the DOM to Markdown
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+
+---
+
+#### Method: Strong->getParentElement
+
+```php
+function getParentElement()
+```
+
+Get the Elements Parent or Null if Top Level
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Strong->getPreviousSibling
+
+```php
+function getPreviousSibling()
+```
+
+Get the Current Elements Previous Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Strong->getNextSibling
+
+```php
+function getNextSibling()
+```
+
+Get the Current Elements Next Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+### Class: \donatj\MDDom\Text
+
+Markdown Raw Text Element
+
+#### Method: Text->__construct
+
+```php
+function __construct($text)
+```
+
+##### Parameters:
+
+- ***string*** `$text`
+
+---
+
+#### Method: Text->exportMarkdown
+
+```php
+function exportMarkdown($fragmentLevel)
+```
+
+Convert the DOM to Markdown
+
+##### Parameters:
+
+- ***int*** `$fragmentLevel` - Private use - recursion depth counter
+
+##### Returns:
+
+- ***string*** - Markdown
+
+
+
+---
+
+#### Method: Text->getParentElement
+
+```php
+function getParentElement()
+```
+
+Get the Elements Parent or Null if Top Level
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Text->getPreviousSibling
+
+```php
+function getPreviousSibling()
+```
+
+Get the Current Elements Previous Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
+
+---
+
+#### Method: Text->getNextSibling
+
+```php
+function getNextSibling()
+```
+
+Get the Current Elements Next Sibling
+
+##### Returns:
+
+- ***\donatj\MDDom\AbstractElement*** | ***null***
