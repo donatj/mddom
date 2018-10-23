@@ -6,7 +6,8 @@
 	},
 	"require-dev": {
 		"donatj/drop": "~1.0.0",
-		"phpunit/phpunit": "~7.4.0"
+		"phpunit/phpunit": "~4.8.36",
+		"erusev/parsedown": "^1.7"
 	},
 	"license": "MIT",
 	"authors": [
