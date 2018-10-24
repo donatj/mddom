@@ -11,11 +11,11 @@ class ImageTest extends \AbstractMarkdownParsingTestCase {
 	 * @param string $alt
 	 * @param string $title
 	 */
-	public function test_ImageGeneration($url, $alt, $title) {
+	public function test_ImageGeneration( $url, $alt, $title ) {
 		$img = new Image($url, $alt, $title);
 
 		$elm = $this->domFromDoc($img);
-		$img = $elm->getElementsByTagName('img')[0];
+		$img = $elm->getElementsByTagName('img')->item(0);
 
 		$expected = [
 			'tag'        => 'img',
@@ -26,7 +26,7 @@ class ImageTest extends \AbstractMarkdownParsingTestCase {
 			],
 		];
 
-		if($title !== '') {
+		if( $title !== '' ) {
 			$expected['attributes']['title'] = $title;
 		}
 
@@ -36,7 +36,7 @@ class ImageTest extends \AbstractMarkdownParsingTestCase {
 		);
 	}
 
-	public function imageGenerationProvider(){
+	public function imageGenerationProvider() {
 		return [
 			[ 'http://example.com/foo.png', 'alt text', '' ],
 			[ 'https://example.com/bar.png', 'alt text', 'has title' ],

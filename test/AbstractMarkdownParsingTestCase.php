@@ -21,7 +21,7 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 
 		$data['tag']      = $dom->tagName;
 		$data['children'] = [];
-		foreach($dom->attributes as $k => $v) {
+		foreach( $dom->attributes as $k => $v ) {
 			$data['attributes'][$k] = $v->value;
 		}
 

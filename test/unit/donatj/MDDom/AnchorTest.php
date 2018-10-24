@@ -15,7 +15,7 @@ class AnchorTest extends \AbstractMarkdownParsingTestCase {
 		$a = new Anchor($href, $text, $title);
 
 		$elm = $this->domFromDoc($a);
-		$a   = $elm->getElementsByTagName('a')[0];
+		$a   = $elm->getElementsByTagName('a')->item(0);
 
 		$expected = [
 			'tag'        => 'a',
