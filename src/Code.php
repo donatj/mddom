@@ -7,7 +7,7 @@ namespace donatj\MDDom;
  *
  * Example:
  *
- * 	`<br />`
+ *    `<br />`
  *
  * @package donatj\MDDom
  */
@@ -28,7 +28,15 @@ class Code extends AbstractElement {
 	 * @return string
 	 */
 	protected function generateMarkdown( $fragmentLevel = 0 ) {
-		return "`{$this->source}`";
+		$max = 0;
+		preg_match_all('/`+/', $this->source, $result, PREG_PATTERN_ORDER);
+		if( $result[0] ) {
+			$max = max(array_map('\\strlen', $result[0]));
+		}
+
+		$quote = str_repeat('`', $max + 1);
+
+		return "{$quote}{$this->source}{$quote}";
 	}
 
 }
