@@ -19,7 +19,7 @@ class Code extends AbstractElement {
 	/**
 	 * @param string $source
 	 */
-	function __construct( $source ) {
+	public function __construct( $source ) {
 		$this->source = $source;
 	}
 

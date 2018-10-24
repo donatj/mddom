@@ -2,7 +2,6 @@
 
 use donatj\MDDom;
 
-
 abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCase {
 
 	/**
@@ -24,7 +23,6 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 		$data['children'] = [];
 		/** @var \DOMNode $node */
 		foreach( $dom->childNodes as $node ) {
-
 
 			if( $node instanceof DOMElement ) {
 				$data['children'][] = $this->getDomElementStruct($node);

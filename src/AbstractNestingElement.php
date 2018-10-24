@@ -99,7 +99,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 	/**
 	 * Gets the child element at a given index or null if not found.
 	 *
-	 * @param integer $index
+	 * @param int $index
 	 * @return AbstractElement|null
 	 */
 	public function childAtIndex( $index ) {

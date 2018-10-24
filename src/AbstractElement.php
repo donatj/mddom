@@ -26,7 +26,7 @@ abstract class AbstractElement {
 	}
 
 	/**
-	 * @var null|AbstractNestingElement
+	 * @var AbstractNestingElement|null
 	 */
 	protected $parentElement = null;
 

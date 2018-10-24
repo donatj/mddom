@@ -23,7 +23,7 @@ class Image extends AbstractElement {
 	 * @param string $alt Alt Text for Accessibility
 	 * @param string $title Optional "hover" title value
 	 */
-	function __construct( $src, $alt, $title = "" ) {
+	public function __construct( $src, $alt, $title = "" ) {
 		$this->src   = $src;
 		$this->alt   = $alt;
 		$this->title = $title;

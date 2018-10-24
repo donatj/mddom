@@ -28,7 +28,7 @@ class CodeBlock extends AbstractElement implements BlockElementInterface {
 	 * @param string      $source Source code
 	 * @param string|null $language Optional language name, e.g. php, js, ruby etc
 	 */
-	function __construct( $source, $language = null ) {
+	public function __construct( $source, $language = null ) {
 		$this->source   = $source;
 		$this->language = $language;
 	}

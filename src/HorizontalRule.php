@@ -20,4 +20,3 @@ class HorizontalRule extends AbstractElement implements BlockElementInterface {
 	}
 
 }
- 

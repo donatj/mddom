@@ -15,7 +15,7 @@ class Text extends AbstractElement {
 	/**
 	 * @param string $text
 	 */
-	function __construct( $text ) {
+	public function __construct( $text ) {
 		$this->text = $text;
 	}
 
@@ -28,4 +28,3 @@ class Text extends AbstractElement {
 	}
 
 }
- 
