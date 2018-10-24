@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="test/bootstrap.php" backupGlobals="false">
 	<testsuites>
+		<testsuite name="unit">
+			<directory>test/unit</directory>
+		</testsuite>
 		<testsuite name="integration">
 			<directory>test/integration</directory>
 		</testsuite>
