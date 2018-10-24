@@ -24,6 +24,8 @@ class Code extends AbstractElement {
 	}
 
 	/**
+	 * @todo handle strings that start or end with backtick
+	 *
 	 * @param int $fragmentLevel
 	 * @return string
 	 */
