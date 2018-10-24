@@ -27,7 +27,6 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 
 		/** @var \DOMNode $node */
 		foreach( $dom->childNodes as $node ) {
-
 			if( $node instanceof DOMElement ) {
 				$data['children'][] = $this->getDomElementStruct($node);
 			} elseif( $node instanceof DOMText ) {
