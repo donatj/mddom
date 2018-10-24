@@ -31,7 +31,7 @@ class HeaderDepthIntegrationTest extends AbstractMarkdownParsingTestCase {
 		);
 
 		$expected = [
-			'tag'      => 'html',
+			'tag'      => 'body',
 			'children' => [
 				[ 'tag' => 'h1', 'children' => [ 'String 1' ] ],
 				[ 'tag' => 'h2', 'children' => [ 'String 2' ] ],

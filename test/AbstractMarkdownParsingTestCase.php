@@ -47,15 +47,15 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 		$html = $p->parse($doc->exportMarkdown());
 
 		$dom = new DOMDocument();
-		$dom->loadHTML("<html>{$html}</html>", LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+		$dom->loadHTML("<html><body>{$html}</body></html>", LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
-		$html = $dom->getElementsByTagName("html");
+		$body = $dom->getElementsByTagName("body");
 
-		if( count($html) !== 1 ) {
-			$this->fail("bad html count");
+		if( count($body) !== 1 ) {
+			$this->fail("bad body count");
 		}
 
-		return $html->item(0);
+		return $body->item(0);
 	}
 
 }
