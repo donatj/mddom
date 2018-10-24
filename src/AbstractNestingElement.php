@@ -10,14 +10,14 @@ abstract class AbstractNestingElement extends AbstractElement {
 	 *
 	 * @param AbstractElement|int|float|string $child,... Child Elements to Append
 	 */
-	function __construct($child = null /* .. AbstractElement $element .. */) {
+	public function __construct($child = null /* .. AbstractElement $element .. */) {
 		call_user_func_array([ $this, 'appendChild' ], func_get_args());
 	}
 
 	/**
 	 * @var AbstractElement[]
 	 */
-	protected $childElements = array();
+	protected $childElements = [];
 
 	/**
 	 * Inject One Or More Elements
