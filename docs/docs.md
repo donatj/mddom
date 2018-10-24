@@ -142,7 +142,7 @@ Gets the child element at a given index or null if not found.
 
 #### Parameters:
 
-- ***integer*** `$index`
+- ***int*** `$index`
 
 #### Returns:
 
@@ -208,7 +208,7 @@ Inline Code Element
 
 Example:
 
-	`<br />`
+   `<br />`
 
 ### Method: Code->__construct
 

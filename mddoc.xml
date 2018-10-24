@@ -1,6 +1,12 @@
 <mddoc>
 	<docpage target="README.md" autoloader="psr4" autoloader-root="src" autoloader-root-namespace="donatj\MDDom">
 		<section title="MDDom - Markdown DOM">
+			<badge-poser type="version" />
+			<badge-poser type="license" />
+			<badge-scrutinizer name="donatj/mddom" type="quality"/>
+			<badge-scrutinizer name="donatj/mddom" type="coverage"/>
+			<badge-travis name="donatj/mddom" />
+
 			<text>A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface</text>
 			<docpage target="docs/docs.md" autoloader="psr4" autoloader-root="src"
 					 autoloader-root-namespace="donatj\MockWebServer">
@@ -13,6 +19,11 @@
 			</section>
 			<section title="Installing">
 				<composer-install/>
+			</section>
+			<section title="Example">
+				<source name="example/simple.php" format="code-block" lang="php"/>
+				<text>Outputs:</text>
+				<exec cmd="php example/simple.php" format="code-block" lang="markdown"/>
 			</section>
 		</section>
 	</docpage>
