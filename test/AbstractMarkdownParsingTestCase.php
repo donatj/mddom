@@ -8,7 +8,7 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 	 * @param \donatj\MDDom\Document $doc
 	 * @return array
 	 */
-	protected function getDocStruct( MDDom\Document $doc ) {
+	protected function getDocStruct( MDDom\AbstractElement $doc ) {
 		return $this->getDomElementStruct($this->domFromDoc($doc));
 	}
 
@@ -21,6 +21,10 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 
 		$data['tag']      = $dom->tagName;
 		$data['children'] = [];
+		foreach($dom->attributes as $k => $v) {
+			$data['attributes'][$k] = $v->value;
+		}
+
 		/** @var \DOMNode $node */
 		foreach( $dom->childNodes as $node ) {
 
@@ -42,7 +46,7 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 	 * @param $doc
 	 * @return \DOMElement
 	 */
-	protected function domFromDoc( MDDom\Document $doc ) {
+	protected function domFromDoc( MDDom\AbstractElement $doc ) {
 		$p    = new Parsedown();
 		$html = $p->parse($doc->exportMarkdown());
 
