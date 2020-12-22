@@ -2,10 +2,12 @@
 
 ## Class: \donatj\MDDom\AbstractElement
 
+---
+
 ### Method: AbstractElement->exportMarkdown
 
 ```php
-function exportMarkdown($fragmentLevel)
+function exportMarkdown([ $fragmentLevel = 0])
 ```
 
 Convert the DOM to Markdown
@@ -17,8 +19,6 @@ Convert the DOM to Markdown
 #### Returns:
 
 - ***string*** - Markdown
-
-
 
 ---
 
@@ -99,7 +99,7 @@ Inject One Or More Elements
 ### Method: AbstractNestingElement->removeChild
 
 ```php
-function removeChild($element)
+function removeChild(\donatj\MDDom\AbstractElement $element)
 ```
 
 Remove a child element
@@ -117,7 +117,7 @@ Remove a child element
 ### Method: AbstractNestingElement->indexOf
 
 ```php
-function indexOf($element)
+function indexOf(\donatj\MDDom\AbstractElement $element)
 ```
 
 Get the index of a child element or null if not found.
@@ -153,7 +153,7 @@ Gets the child element at a given index or null if not found.
 ### Method: AbstractNestingElement->getNextSiblingOf
 
 ```php
-function getNextSiblingOf($element)
+function getNextSiblingOf(\donatj\MDDom\AbstractElement $element)
 ```
 
 Get the next sibling of a given child element or null if not found
@@ -171,7 +171,7 @@ Get the next sibling of a given child element or null if not found
 ### Method: AbstractNestingElement->getPreviousSiblingOf
 
 ```php
-function getPreviousSiblingOf($element)
+function getPreviousSiblingOf(\donatj\MDDom\AbstractElement $element)
 ```
 
 Get the previous sibling of a given child element or null if not found
@@ -208,7 +208,7 @@ Inline Code Element
 
 Example:
 
-   `<br />`
+`<br />`
 
 ### Method: Code->__construct
 
@@ -226,9 +226,9 @@ Block Level Code Element
 
 Example:
 
-	```php
-	echo "Hello World"
-	```
+```php
+echo "Hello World"
+```
 
 ### Method: CodeBlock->__construct
 
@@ -283,7 +283,7 @@ Inline Emphasis Element
 
 Example:
 
-	*italic*
+*italic*
 
 ## Class: \donatj\MDDom\Header
 
@@ -301,7 +301,7 @@ Block Level Horizontal Rule Element
 
 Example:
 
-	---
+---
 
 ## Class: \donatj\MDDom\Image
 
@@ -333,7 +333,7 @@ Strong Element
 
 Example:
 
-	**bold**
+**bold**
 
 ## Class: \donatj\MDDom\Text
 
