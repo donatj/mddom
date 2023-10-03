@@ -5,8 +5,6 @@
 			<badge-poser type="version"/>
 			<badge-poser type="license"/>
 			<badge-github-action name="donatj/mddom" workflow-file="ci.yml"/>
-			<badge-scrutinizer name="donatj/mddom" type="quality"/>
-			<badge-scrutinizer name="donatj/mddom" type="coverage"/>
 
 			<text>A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface</text>
 			<docpage target="docs/docs.md">
