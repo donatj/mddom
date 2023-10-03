@@ -9,11 +9,9 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
  *
  * Example:
  *
- * 	```php
- * 	echo "Hello World"
- * 	```
- *
- * @package donatj\MDDom
+ *    ```php
+ *    echo "Hello World"
+ *    ```
  */
 class CodeBlock extends AbstractElement implements BlockElementInterface {
 
@@ -25,19 +23,15 @@ class CodeBlock extends AbstractElement implements BlockElementInterface {
 	/**
 	 * CodeBlock constructor.
 	 *
-	 * @param string      $source Source code
+	 * @param string      $source   Source code
 	 * @param string|null $language Optional language name, e.g. php, js, ruby etc
 	 */
-	public function __construct( $source, $language = null ) {
+	public function __construct( string $source, ?string $language = null ) {
 		$this->source   = $source;
 		$this->language = $language;
 	}
 
-	/**
-	 * @param int $fragmentLevel
-	 * @return string
-	 */
-	protected function generateMarkdown( $fragmentLevel = 0 ) {
+	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
 		$max = 2;
 		preg_match_all('/```+/', $this->source, $result, PREG_PATTERN_ORDER);
 		if( $result[0] ) {

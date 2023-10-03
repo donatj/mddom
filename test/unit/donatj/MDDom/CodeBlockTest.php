@@ -24,7 +24,7 @@ class CodeBlockTest extends \AbstractMarkdownParsingTestCase {
 foo
 ```
 MD
-	,
+				,
 			],
 			[ "a\n```\ncode block in code block\n```\nand some more text", "", <<<MD
 \n\n````

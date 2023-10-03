@@ -16,11 +16,11 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
  * ```php
  * $doc = new \donatj\MDDom\Document;
  * $doc->appendChild(
- * 	new \donatj\MDDom\Header('Level 1')
+ *    new \donatj\MDDom\Header('Level 1')
  * )->appendChild(
- * 	(new \donatj\MDDom\DocumentDepth)->appendChild(
- * 		new \donatj\MDDom\Header('Level 2')
- * 	)
+ *    (new \donatj\MDDom\DocumentDepth)->appendChild(
+ *        new \donatj\MDDom\Header('Level 2')
+ *    )
  * );
  * echo $doc->exportMarkdown();
  * ```
@@ -32,8 +32,6 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
  *
  * ## Level 2
  * ```
- *
- * @package donatj\MDDom
  */
 class DocumentDepth extends Document implements BlockElementInterface {
 

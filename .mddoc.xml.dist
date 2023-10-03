@@ -1,17 +1,17 @@
 <mddoc>
-	<docpage target="README.md" autoloader="psr4" autoloader-root="src" autoloader-root-namespace="donatj\MDDom">
+	<docpage target="README.md">
+		<autoloader type="psr4" root="src" namespace="donatj\MDDom"/>
 		<section title="MDDom - Markdown DOM">
 			<badge-poser type="version"/>
 			<badge-poser type="license"/>
-			<badge-github-action name="donatj/mddom" workflow="CI"/>
+			<badge-github-action name="donatj/mddom" workflow-file="ci.yml"/>
 			<badge-scrutinizer name="donatj/mddom" type="quality"/>
 			<badge-scrutinizer name="donatj/mddom" type="coverage"/>
 
 			<text>A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface</text>
-			<docpage target="docs/docs.md" autoloader="psr4" autoloader-root="src"
-					 autoloader-root-namespace="donatj\MockWebServer">
+			<docpage target="docs/docs.md">
 				<section title="Documentation">
-					<recursiveDirectory name="src"/>
+					<recursive-directory name="src"/>
 				</section>
 			</docpage>
 			<section title="Requirements">

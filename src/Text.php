@@ -4,8 +4,6 @@ namespace donatj\MDDom;
 
 /**
  * Markdown Raw Text Element
- *
- * @package donatj\MDDom
  */
 class Text extends AbstractElement {
 
@@ -13,17 +11,13 @@ class Text extends AbstractElement {
 	protected $text;
 
 	/**
-	 * @param string $text
+	 * @param string $text The text to output as-is
 	 */
-	public function __construct( $text ) {
+	public function __construct( string $text ) {
 		$this->text = $text;
 	}
 
-	/**
-	 * @param int $fragmentLevel
-	 * @return string
-	 */
-	protected function generateMarkdown( $fragmentLevel = 0 ) {
+	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
 		return $this->text;
 	}
 
