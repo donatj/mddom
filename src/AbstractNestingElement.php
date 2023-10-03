@@ -3,7 +3,6 @@
 namespace donatj\MDDom;
 
 // @todo might be worth figuring out if SplStack would work for this.
-use InvalidArgumentException;
 
 abstract class AbstractNestingElement extends AbstractElement {
 

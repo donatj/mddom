@@ -6,16 +6,12 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 
 	/**
 	 * @param \donatj\MDDom\Document $doc
-	 * @return array
 	 */
-	protected function getDocStruct( MDDom\AbstractElement $doc ) {
+	protected function getDocStruct( MDDom\AbstractElement $doc ) : array {
 		return $this->getDomElementStruct($this->domFromDoc($doc));
 	}
 
-	/**
-	 * @return array
-	 */
-	protected function getDomElementStruct( DOMElement $dom ) {
+	protected function getDomElementStruct( DOMElement $dom ) : array {
 		$data = [];
 
 		$data['tag']      = $dom->tagName;
@@ -40,14 +36,11 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 		return $data;
 	}
 
-	/**
-	 * @return \DOMElement
-	 */
-	protected function domFromDoc( MDDom\AbstractElement $doc ) {
-		$p    = new Parsedown();
+	protected function domFromDoc( MDDom\AbstractElement $doc ) : DOMElement {
+		$p    = new Parsedown;
 		$html = $p->parse($doc->exportMarkdown());
 
-		$dom = new DOMDocument();
+		$dom = new DOMDocument;
 		$dom->loadHTML("<html><body>{$html}</body></html>", LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
 
 		$body = $dom->getElementsByTagName("body");
