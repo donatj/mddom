@@ -121,18 +121,10 @@ Get the next sibling of a given child element or null if not found
 ### Method: AbstractNestingElement->childAtIndex
 
 ```php
-function childAtIndex($index)
+function childAtIndex(int $index) : ?\donatj\MDDom\AbstractElement
 ```
 
 Gets the child element at a given index or null if not found.
-
-#### Parameters:
-
-- ***int*** `$index`
-
-#### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ---
 
@@ -472,18 +464,10 @@ Get the next sibling of a given child element or null if not found
 ### Method: Document->childAtIndex
 
 ```php
-function childAtIndex($index)
+function childAtIndex(int $index) : ?\donatj\MDDom\AbstractElement
 ```
 
 Gets the child element at a given index or null if not found.
-
-#### Parameters:
-
-- ***int*** `$index`
-
-#### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ---
 
@@ -646,18 +630,10 @@ Get the next sibling of a given child element or null if not found
 ### Method: DocumentDepth->childAtIndex
 
 ```php
-function childAtIndex($index)
+function childAtIndex(int $index) : ?\donatj\MDDom\AbstractElement
 ```
 
 Gets the child element at a given index or null if not found.
-
-#### Parameters:
-
-- ***int*** `$index`
-
-#### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ---
 
@@ -798,18 +774,10 @@ Get the next sibling of a given child element or null if not found
 ### Method: Emphasis->childAtIndex
 
 ```php
-function childAtIndex($index)
+function childAtIndex(int $index) : ?\donatj\MDDom\AbstractElement
 ```
 
 Gets the child element at a given index or null if not found.
-
-#### Parameters:
-
-- ***int*** `$index`
-
-#### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ---
 
@@ -952,18 +920,10 @@ Get the next sibling of a given child element or null if not found
 ### Method: Header->childAtIndex
 
 ```php
-function childAtIndex($index)
+function childAtIndex(int $index) : ?\donatj\MDDom\AbstractElement
 ```
 
 Gets the child element at a given index or null if not found.
-
-#### Parameters:
-
-- ***int*** `$index`
-
-#### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ---
 
@@ -1222,18 +1182,10 @@ Get the next sibling of a given child element or null if not found
 ### Method: Paragraph->childAtIndex
 
 ```php
-function childAtIndex($index)
+function childAtIndex(int $index) : ?\donatj\MDDom\AbstractElement
 ```
 
 Gets the child element at a given index or null if not found.
-
-#### Parameters:
-
-- ***int*** `$index`
-
-#### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ---
 
@@ -1374,18 +1326,10 @@ Get the next sibling of a given child element or null if not found
 ### Method: Strong->childAtIndex
 
 ```php
-function childAtIndex($index)
+function childAtIndex(int $index) : ?\donatj\MDDom\AbstractElement
 ```
 
 Gets the child element at a given index or null if not found.
-
-#### Parameters:
-
-- ***int*** `$index`
-
-#### Returns:
-
-- ***\donatj\MDDom\AbstractElement*** | ***null***
 
 ---
 

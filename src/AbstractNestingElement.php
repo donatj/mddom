@@ -81,11 +81,8 @@ abstract class AbstractNestingElement extends AbstractElement {
 
 	/**
 	 * Gets the child element at a given index or null if not found.
-	 *
-	 * @param int $index
-	 * @return AbstractElement|null
 	 */
-	public function childAtIndex( $index ) {
+	public function childAtIndex( int $index ) : ?AbstractElement {
 		if( $index !== null && isset($this->childElements[$index]) ) {
 			return $this->childElements[$index];
 		}
