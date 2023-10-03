@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/donatj/mddom/version)](https://packagist.org/packages/donatj/mddom)
 [![License](https://poser.pugx.org/donatj/mddom/license)](https://packagist.org/packages/donatj/mddom)
-[![Build Status](https://github.com/donatj/mddom/workflows/CI/badge.svg?)](https://github.com/donatj/mddom/actions?query=workflow%3ACI)
+[![ci.yml](https://github.com/donatj/mddom/actions/workflows/ci.yml/badge.svg?)](https://github.com/donatj/mddom/actions/workflows/ci.yml)
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/donatj/mddom/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/donatj/mddom)
 [![Code Coverage](https://scrutinizer-ci.com/g/donatj/mddom/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/donatj/mddom)
 
@@ -15,7 +15,7 @@ A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface
 
 ## Requirements
 
-- **php**: >=5.4
+- **php**: >=7.2
 - **ext-dom**: *
 - **ext-libxml**: *
 
