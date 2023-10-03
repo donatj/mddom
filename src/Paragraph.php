@@ -6,9 +6,8 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
 
 /**
  * Paragraph Element
- *
- * @package donatj\MDDom
  */
 class Paragraph extends AbstractNestingElement implements BlockElementInterface {
+
 	/// Hmm, this might need *something* eventually
 }

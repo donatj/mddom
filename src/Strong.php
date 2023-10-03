@@ -7,13 +7,11 @@ namespace donatj\MDDom;
  *
  * Example:
  *
- * 	**bold**
- *
- * @package donatj\MDDom
+ *    **bold**
  */
 class Strong extends AbstractNestingElement {
 
-	protected function generateMarkdown( $fragmentLevel = 0 ) {
+	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
 		$return = "**";
 		$return .= parent::generateMarkdown($fragmentLevel);
 		$return .= "**";

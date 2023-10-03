@@ -3,38 +3,35 @@
 namespace donatj\MDDom;
 
 // @todo might be worth figuring out if SplStack would work for this.
+use InvalidArgumentException;
+
 abstract class AbstractNestingElement extends AbstractElement {
+
+	/** @var AbstractElement[] */
+	protected $childElements = [];
 
 	/**
 	 * AbstractNestingElement constructor.
 	 *
-	 * @param AbstractElement|int|float|string $child,... Child Elements to Append
+	 * @param AbstractElement|float|int|string ...$children Child Elements to Append
 	 */
-	public function __construct($child = null /* .. AbstractElement $element .. */) {
-		call_user_func_array([ $this, 'appendChild' ], func_get_args());
+	public function __construct( ...$children ) {
+		$this->appendChild(...$children);
 	}
-
-	/**
-	 * @var AbstractElement[]
-	 */
-	protected $childElements = [];
 
 	/**
 	 * Inject One Or More Elements
 	 *
-	 * @param AbstractElement|int|float|string $child,... Child Elements to Append
-	 * @return $this
-	 *
+	 * @param AbstractElement|float|int|string ...$children Child Elements to Append
 	 * @throws \InvalidArgumentException
+	 * @return $this
 	 */
-	public function appendChild( $child = null /* .. AbstractElement $element .. */ ) {
-		$arg_list = func_get_args();
-
-		foreach( $arg_list as $arg ) {
-			if( $arg instanceof AbstractElement ) {
-				$inject = $arg;
-			} elseif( is_scalar($arg) ) {
-				$inject = new Text($arg);
+	public function appendChild( ...$children ) : AbstractNestingElement {
+		foreach( $children as $child ) {
+			if( $child instanceof AbstractElement ) {
+				$inject = $child;
+			} elseif( is_scalar($child) ) {
+				$inject = new Text($child);
 			} else {
 				throw new \InvalidArgumentException;
 			}
@@ -49,10 +46,9 @@ abstract class AbstractNestingElement extends AbstractElement {
 	/**
 	 * Remove a child element
 	 *
-	 * @param AbstractElement $element
 	 * @return bool False if the given element was not found.
 	 */
-	public function removeChild( AbstractElement $element ) {
+	public function removeChild( AbstractElement $element ) : bool {
 		$index = $this->indexOf($element);
 		if( $index !== null ) {
 			unset($this->childElements[$index]);
@@ -67,33 +63,21 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
-	 * @param int $fragmentLevel
-	 * @return string
-	 */
-	protected function generateMarkdown( $fragmentLevel = 0 ) {
-		$return = "";
-
-		foreach( $this->childElements as $childElement ) {
-			if( $childElement instanceof DocumentDepth ) {
-				$return .= $childElement->exportMarkdown($fragmentLevel + 1);
-			} else {
-				$return .= $childElement->exportMarkdown($fragmentLevel);
-			}
-		}
-
-		return $return;
-	}
-
-	/**
 	 * Get the index of a child element or null if not found.
-	 *
-	 * @param AbstractElement $element
-	 * @return int|null
 	 */
-	public function indexOf( AbstractElement $element ) {
+	public function indexOf( AbstractElement $element ) : ?int {
 		$search_result = array_search($element, $this->childElements, true);
 
 		return $search_result === false ? null : $search_result;
+	}
+
+	/**
+	 * Get the next sibling of a given child element or null if not found
+	 */
+	public function getNextSiblingOf( AbstractElement $element ) : ?AbstractElement {
+		$index = $this->indexOf($element);
+
+		return $this->childAtIndex($index + 1);
 	}
 
 	/**
@@ -111,27 +95,26 @@ abstract class AbstractNestingElement extends AbstractElement {
 	}
 
 	/**
-	 * Get the next sibling of a given child element or null if not found
-	 *
-	 * @param AbstractElement $element
-	 * @return AbstractElement|null
-	 */
-	public function getNextSiblingOf( AbstractElement $element ) {
-		$index = $this->indexOf($element);
-
-		return $this->childAtIndex($index + 1);
-	}
-
-	/**
 	 * Get the previous sibling of a given child element or null if not found
-	 *
-	 * @param AbstractElement $element
-	 * @return AbstractElement|null
 	 */
-	public function getPreviousSiblingOf( AbstractElement $element ) {
+	public function getPreviousSiblingOf( AbstractElement $element ) : ?AbstractElement {
 		$index = $this->indexOf($element);
 
 		return $this->childAtIndex($index - 1);
+	}
+
+	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+		$return = "";
+
+		foreach( $this->childElements as $childElement ) {
+			if( $childElement instanceof DocumentDepth ) {
+				$return .= $childElement->exportMarkdown($fragmentLevel + 1);
+			} else {
+				$return .= $childElement->exportMarkdown($fragmentLevel);
+			}
+		}
+
+		return $return;
 	}
 
 }

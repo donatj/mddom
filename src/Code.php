@@ -8,28 +8,20 @@ namespace donatj\MDDom;
  * Example:
  *
  *    `<br />`
- *
- * @package donatj\MDDom
  */
 class Code extends AbstractElement {
 
 	/** @var string */
 	protected $source;
 
-	/**
-	 * @param string $source
-	 */
-	public function __construct( $source ) {
+	public function __construct( string $source ) {
 		$this->source = $source;
 	}
 
 	/**
 	 * @todo handle strings that start or end with backtick
-	 *
-	 * @param int $fragmentLevel
-	 * @return string
 	 */
-	protected function generateMarkdown( $fragmentLevel = 0 ) {
+	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
 		$max = 0;
 		preg_match_all('/`+/', $this->source, $result, PREG_PATTERN_ORDER);
 		if( $result[0] ) {

@@ -2,7 +2,7 @@
 	"name": "donatj/mddom",
 	"description": "A Simple Markdown DOM",
 	"require": {
-		"php": ">=5.4",
+		"php": ">=7.2",
 		"ext-dom": "*",
 		"ext-libxml": "*"
 	},

@@ -13,7 +13,6 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 	}
 
 	/**
-	 * @param \DOMElement $dom
 	 * @return array
 	 */
 	protected function getDomElementStruct( DOMElement $dom ) {
@@ -42,7 +41,6 @@ abstract class AbstractMarkdownParsingTestCase extends \PHPUnit\Framework\TestCa
 	}
 
 	/**
-	 * @param $doc
 	 * @return \DOMElement
 	 */
 	protected function domFromDoc( MDDom\AbstractElement $doc ) {
