@@ -10,6 +10,9 @@ class Text extends AbstractElement {
 	/** @var string */
 	protected $text;
 
+	/**
+	 * @param string $text The text to output as-is
+	 */
 	public function __construct( string $text ) {
 		$this->text = $text;
 	}

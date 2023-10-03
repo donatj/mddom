@@ -16,8 +16,6 @@ A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface
 ## Requirements
 
 - **php**: >=7.2
-- **ext-dom**: *
-- **ext-libxml**: *
 
 ## Installing
 

@@ -14,6 +14,9 @@ class Code extends AbstractElement {
 	/** @var string */
 	protected $source;
 
+	/**
+	 * @param string $source The source code to contain within the code element
+	 */
 	public function __construct( string $source ) {
 		$this->source = $source;
 	}

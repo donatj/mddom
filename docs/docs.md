@@ -266,9 +266,15 @@ Example:
 
 `<br />`
 
+### Method: Code->__construct
 
+```php
+function __construct(string $source)
+```
 
-### Undocumented Method: `Code->__construct(string $source)`
+#### Parameters:
+
+- ***string*** `$source` - The source code to contain within the code element
 
 ---
 
@@ -1443,9 +1449,15 @@ Get the Current Elements Next Sibling
 
 Markdown Raw Text Element
 
+### Method: Text->__construct
 
+```php
+function __construct(string $text)
+```
 
-### Undocumented Method: `Text->__construct(string $text)`
+#### Parameters:
+
+- ***string*** `$text` - The text to output as-is
 
 ---
 
