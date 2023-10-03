@@ -7,7 +7,7 @@
 	"require-dev": {
 		"ext-dom": "*",
 		"ext-libxml": "*",
-		"donatj/drop": "~1.0.0",
+		"donatj/drop": "~1.1.0",
 		"phpunit/phpunit": "^8.5 | ^9.5",
 		"erusev/parsedown": "^1.7",
 		"friendsofphp/php-cs-fixer": "^3.3",
