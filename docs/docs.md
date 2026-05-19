@@ -1,6 +1,6 @@
 # Documentation
 
-## Class: \donatj\MDDom\AbstractElement
+## Class: donatj\MDDom\AbstractElement
 
 ### Method: AbstractElement->exportMarkdown
 
@@ -48,7 +48,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\AbstractNestingElement
+## Class: donatj\MDDom\AbstractNestingElement
 
 ### Method: AbstractNestingElement->__construct
 
@@ -184,7 +184,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Anchor
+## Class: donatj\MDDom\Anchor
 
 Inline Anchor "a tag" Element
 
@@ -250,7 +250,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Code
+## Class: donatj\MDDom\Code
 
 Inline Code Element
 
@@ -316,7 +316,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\CodeBlock
+## Class: donatj\MDDom\CodeBlock
 
 Block Level Code Element
 
@@ -387,7 +387,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Document
+## Class: donatj\MDDom\Document
 
 Document Root
 
@@ -527,7 +527,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\DocumentDepth
+## Class: donatj\MDDom\DocumentDepth
 
 DocumentDepth
 
@@ -693,7 +693,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Emphasis
+## Class: donatj\MDDom\Emphasis
 
 Inline Emphasis Element
 
@@ -837,7 +837,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Header
+## Class: donatj\MDDom\Header
 
 Header "H{n}" Element
 
@@ -983,7 +983,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\HorizontalRule
+## Class: donatj\MDDom\HorizontalRule
 
 Block Level Horizontal Rule Element
 
@@ -1039,7 +1039,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Image
+## Class: donatj\MDDom\Image
 
 Image Element
 
@@ -1105,9 +1105,9 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Interfaces\BlockElementInterface
+## Class: donatj\MDDom\Interfaces\BlockElementInterface
 
-## Class: \donatj\MDDom\Paragraph
+## Class: donatj\MDDom\Paragraph
 
 Paragraph Element
 
@@ -1245,7 +1245,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Strong
+## Class: donatj\MDDom\Strong
 
 Strong Element
 
@@ -1389,7 +1389,7 @@ function getNextSibling() : ?\donatj\MDDom\AbstractElement
 
 Get the Current Elements Next Sibling
 
-## Class: \donatj\MDDom\Text
+## Class: donatj\MDDom\Text
 
 Markdown Raw Text Element
 

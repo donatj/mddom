@@ -2,7 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/donatj/mddom/version)](https://packagist.org/packages/donatj/mddom)
 [![License](https://poser.pugx.org/donatj/mddom/license)](https://packagist.org/packages/donatj/mddom)
-[![ci.yml](https://github.com/donatj/mddom/actions/workflows/ci.yml/badge.svg?)](https://github.com/donatj/mddom/actions/workflows/ci.yml)
+[![ci.yml](https://github.com/donatj/mddom/actions/workflows/ci.yml/badge.svg)](https://github.com/donatj/mddom/actions/workflows/ci.yml)
 
 
 A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface
