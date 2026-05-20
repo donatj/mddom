@@ -30,7 +30,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 			if( $child instanceof AbstractElement ) {
 				$inject = $child;
 			} elseif( is_scalar($child) ) {
-				$inject = new Text($child);
+				$inject = new Text((string)$child);
 			} else {
 				throw new \InvalidArgumentException;
 			}
@@ -67,7 +67,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 	public function indexOf( AbstractElement $element ) : ?int {
 		$search_result = array_search($element, $this->childElements, true);
 
-		return $search_result === false ? null : $search_result;
+		return is_int($search_result) ? $search_result : null;
 	}
 
 	/**
