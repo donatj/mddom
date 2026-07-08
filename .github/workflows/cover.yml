@@ -23,7 +23,7 @@ jobs:
         with:
           php-version: ${{ matrix.php-versions }}
           extensions: sockets, json, curl
-
+          coverage: xdebug
       - name: Install dependencies with composer
         run: composer install
 
