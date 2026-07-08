@@ -55,4 +55,24 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertEquals($expected, $this->getDocStruct($bq));
 	}
 
+	public function test_exportMarkdown_unixNewlines() : void {
+		$doc = new Document(
+			new BlockQuote(
+				new Text("Line one\nLine two")
+			)
+		);
+
+		$this->assertSame("> Line one\n> Line two", $doc->exportMarkdown());
+	}
+
+	public function test_exportMarkdown_windowsNewlines() : void {
+		$doc = new Document(
+			new BlockQuote(
+				new Text("Line one\r\nLine two")
+			)
+		);
+
+		$this->assertSame("> Line one\n> Line two", $doc->exportMarkdown());
+	}
+
 }
