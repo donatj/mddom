@@ -12,7 +12,7 @@ class ImageTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertSame($expected, $img->exportMarkdown());
 	}
 
-	public function imageMarkdownProvider() : \Generator {
+	public static function imageMarkdownProvider() : \Generator {
 		yield 'without title' => [ 'https://example.com/img.png', 'alt text', '', '![alt text](https://example.com/img.png)' ];
 		yield 'with title' => [ 'https://example.com/img.png', 'alt text', 'hover title', '![alt text](https://example.com/img.png "hover title")' ];
 		yield 'relative path' => [ '/images/photo.jpg', 'a photo', '', '![a photo](/images/photo.jpg)' ];
@@ -43,7 +43,7 @@ class ImageTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertEquals($expected, $this->getDomElementStruct($img));
 	}
 
-	public function imageHtmlProvider() : \Generator {
+	public static function imageHtmlProvider() : \Generator {
 		yield 'without title' => [ 'http://example.com/foo.png', 'alt text', '' ];
 		yield 'with title' => [ 'https://example.com/bar.png', 'alt text', 'has title' ];
 		yield 'url with query params and quoted text' => [ '/baz.jpg?width=100', 'has "quotes"', 'booo' ];

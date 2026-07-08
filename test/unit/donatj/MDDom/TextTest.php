@@ -12,7 +12,7 @@ class TextTest extends \PHPUnit\Framework\TestCase {
 		$this->assertSame($expected, $text->exportMarkdown());
 	}
 
-	public function exportMarkdownProvider() : \Generator {
+	public static function exportMarkdownProvider() : \Generator {
 		yield 'plain text is passed through unchanged' => [ 'Hello World', 'Hello World' ];
 		yield 'empty string' => [ '', '' ];
 		yield 'markdown characters are preserved verbatim' => [ '**bold** and *italic*', '**bold** and *italic*' ];

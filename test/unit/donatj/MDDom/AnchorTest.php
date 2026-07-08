@@ -12,7 +12,7 @@ class AnchorTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertSame($expected, $a->exportMarkdown());
 	}
 
-	public function anchorMarkdownProvider() : \Generator {
+	public static function anchorMarkdownProvider() : \Generator {
 		yield 'without title' => [ 'https://example.com', 'link text', '', '[link text](https://example.com)' ];
 		yield 'with title' => [ 'https://example.com', 'link text', 'hover title', '[link text](https://example.com "hover title")' ];
 		yield 'url with query string' => [ '/path?q=1&r=2', 'click here', '', '[click here](/path?q=1&r=2)' ];
@@ -42,7 +42,7 @@ class AnchorTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertEquals($expected, $this->getDomElementStruct($a));
 	}
 
-	public function anchorHtmlProvider() : \Generator {
+	public static function anchorHtmlProvider() : \Generator {
 		yield 'without title' => [ 'http://example.com', 'link text', '' ];
 		yield 'with title' => [ 'https://example.com', 'link text', 'has title' ];
 		yield 'url with query params and quoted text' => [ '/baz.jpg?width=100', 'has "quotes"', 'booo' ];

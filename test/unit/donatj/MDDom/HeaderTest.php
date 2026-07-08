@@ -12,7 +12,7 @@ class HeaderTest extends \PHPUnit\Framework\TestCase {
 		$this->assertSame($expected, $header->exportMarkdown($fragmentLevel));
 	}
 
-	public function headerLevelProvider() : \Generator {
+	public static function headerLevelProvider() : \Generator {
 		yield 'h1 at depth 0' => [ 0, "\n\n# Heading" ];
 		yield 'h2 at depth 1' => [ 1, "\n\n## Heading" ];
 		yield 'h3 at depth 2' => [ 2, "\n\n### Heading" ];

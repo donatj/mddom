@@ -11,7 +11,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertEquals($expected, $this->getDocStruct($blockQuote));
 	}
 
-	public function blockQuoteHtmlProvider() : \Generator {
+	public static function blockQuoteHtmlProvider() : \Generator {
 		yield 'single paragraph' => [
 			new BlockQuote(
 				0,
@@ -70,7 +70,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertSame($expected, $doc->exportMarkdown());
 	}
 
-	public function newlineNormalizationProvider() : \Generator {
+	public static function newlineNormalizationProvider() : \Generator {
 		yield 'unix newlines' => [ "Line one\nLine two", "> Line one\n> Line two" ];
 		yield 'windows newlines' => [ "Line one\r\nLine two", "> Line one\n> Line two" ];
 	}
@@ -93,7 +93,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertSame($expected, $doc->exportMarkdown());
 	}
 
-	public function headerFragmentLevelProvider() : \Generator {
+	public static function headerFragmentLevelProvider() : \Generator {
 		yield 'reset to top level' => [ 0, "> # First\n> \n> ## Second" ];
 		yield 'inherits current level' => [ null, "> ## First\n> \n> ### Second" ];
 		yield 'explicit level 3' => [ 3, "> #### First\n> \n> ##### Second" ];

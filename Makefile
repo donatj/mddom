@@ -15,3 +15,4 @@ lint:
 fix:
 	vendor/bin/phpcbf
 	vendor/bin/php-cs-fixer fix
+
