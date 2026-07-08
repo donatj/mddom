@@ -13,24 +13,22 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
  */
 class BlockQuote extends AbstractNestingElement implements BlockElementInterface {
 
-	/** @var false|int|null */
+	/** @var int|null */
 	protected $fragmentLevel;
 
 	/**
-	 * @param false|int|null                   $fragmentLevel Fragment level override. false resets to 0, null inherits current level, int sets an explicit level.
+	 * @param int|null                         $fragmentLevel Fragment level override. null inherits current level, int sets an explicit level (0 resets to top).
 	 * @param AbstractElement|float|int|string ...$children
 	 */
-	public function __construct( $fragmentLevel, ...$children ) {
+	public function __construct( ?int $fragmentLevel, ...$children ) {
 		$this->fragmentLevel = $fragmentLevel;
 
 		parent::__construct(...$children);
 	}
 
 	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
-		if( is_int($this->fragmentLevel) ) {
+		if( $this->fragmentLevel !== null ) {
 			$fragmentLevel = $this->fragmentLevel;
-		} elseif( $this->fragmentLevel === false ) {
-			$fragmentLevel = 0;
 		}
 
 		$markdown = str_replace(["\r\n", "\r"], "\n", parent::generateMarkdown($fragmentLevel));

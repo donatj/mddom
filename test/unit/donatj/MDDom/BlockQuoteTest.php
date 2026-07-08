@@ -6,7 +6,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 
 	public function test_exportMarkdown_simple() : void {
 		$bq = new BlockQuote(
-			false,
+			0,
 			new Paragraph('Hello World')
 		);
 
@@ -30,7 +30,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 
 	public function test_exportMarkdown_multiline() : void {
 		$bq = new BlockQuote(
-			false,
+			0,
 			new Paragraph('Line one'),
 			new Paragraph('Line two')
 		);
@@ -60,7 +60,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 	public function test_exportMarkdown_unixNewlines() : void {
 		$doc = new Document(
 			new BlockQuote(
-				false,
+				0,
 				new Text("Line one\nLine two")
 			)
 		);
@@ -71,7 +71,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 	public function test_exportMarkdown_windowsNewlines() : void {
 		$doc = new Document(
 			new BlockQuote(
-				false,
+				0,
 				new Text("Line one\r\nLine two")
 			)
 		);
@@ -83,7 +83,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$doc = new Document(
 			new DocumentDepth(
 				new BlockQuote(
-					false,
+					0,
 					new Header('First'),
 					new DocumentDepth(
 						new Header('Second')
