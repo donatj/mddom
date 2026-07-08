@@ -17,33 +17,34 @@ class BlockQuote extends AbstractNestingElement implements BlockElementInterface
 	protected $fragmentLevel = false;
 
 	/**
-	 * @param AbstractElement|float|int|string|null ...$children
+	 * @param AbstractElement|float|int|string ...$children
 	 */
 	public function __construct( ...$children ) {
-		$this->fragmentLevel = false;
-
-		if( array_key_exists(0, $children) && (is_int($children[0]) || $children[0] === null) ) {
-			$this->fragmentLevel = $children[0];
-			unset($children[0]);
-			$children = array_values($children);
-		}
-
-		/** @var array<int, AbstractElement|float|int|string> $children */
 		parent::__construct(...$children);
 	}
 
 	/**
+	 * Create a BlockQuote that inherits the current fragment (header depth) level.
+	 *
 	 * @param AbstractElement|float|int|string ...$children
 	 */
 	public static function withCurrentFragmentLevel( ...$children ) : self {
-		return new self(null, ...$children);
+		$instance = new self(...$children);
+		$instance->fragmentLevel = null;
+
+		return $instance;
 	}
 
 	/**
+	 * Create a BlockQuote that starts at the given fragment (header depth) level.
+	 *
 	 * @param AbstractElement|float|int|string ...$children
 	 */
 	public static function withFragmentLevel( int $fragmentLevel, ...$children ) : self {
-		return new self($fragmentLevel, ...$children);
+		$instance = new self(...$children);
+		$instance->fragmentLevel = $fragmentLevel;
+
+		return $instance;
 	}
 
 	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {

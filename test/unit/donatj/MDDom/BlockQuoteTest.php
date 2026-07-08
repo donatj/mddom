@@ -93,8 +93,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 	public function test_exportMarkdown_headers_withCurrentFragmentLevelConstructor() : void {
 		$doc = new Document(
 			new DocumentDepth(
-				new BlockQuote(
-					null,
+				BlockQuote::withCurrentFragmentLevel(
 					new Header('First'),
 					new DocumentDepth(
 						new Header('Second')
@@ -109,7 +108,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 	public function test_exportMarkdown_headers_withCustomFragmentLevelConstructor() : void {
 		$doc = new Document(
 			new DocumentDepth(
-				new BlockQuote(
+				BlockQuote::withFragmentLevel(
 					3,
 					new Header('First'),
 					new DocumentDepth(
