@@ -9,7 +9,7 @@
 		"ext-libxml": "*",
 		"donatj/drop": "~1.0.0",
 		"phpunit/phpunit": "^8.5 | ^9.5",
-		"erusev/parsedown": "^1.7",
+		"erusev/parsedown": "^1.8",
 		"friendsofphp/php-cs-fixer": "^3.95",
 		"squizlabs/php_codesniffer": "^3.7",
 		"corpus/coding-standard": "^0.6.0",
