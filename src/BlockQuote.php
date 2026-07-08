@@ -13,25 +13,22 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
  */
 class BlockQuote extends AbstractNestingElement implements BlockElementInterface {
 
-	/** @var int|null */
-	protected $fragmentLevel = 0;
+	/** @var bool|int */
+	protected $fragmentLevel = false;
 
 	/**
-	 * @param AbstractElement|bool|float|int|string|null $fragmentLevelOrChild
-	 * @param AbstractElement|float|int|string           ...$children
+	 * @param AbstractElement|bool|float|int|string ...$children
 	 */
-	public function __construct( $fragmentLevelOrChild = false, ...$children ) {
-		if( $fragmentLevelOrChild === true || $fragmentLevelOrChild === null ) {
-			$this->fragmentLevel = null;
-		} elseif( $fragmentLevelOrChild === false ) {
-			$this->fragmentLevel = 0;
-		} elseif( is_int($fragmentLevelOrChild) ) {
-			$this->fragmentLevel = $fragmentLevelOrChild;
-		} else {
-			$this->fragmentLevel = 0;
-			array_unshift($children, $fragmentLevelOrChild);
+	public function __construct( ...$children ) {
+		$this->fragmentLevel = false;
+
+		if( isset($children[0]) && (is_bool($children[0]) || is_int($children[0])) ) {
+			$this->fragmentLevel = $children[0];
+			unset($children[0]);
+			$children = array_values($children);
 		}
 
+		/** @var array<int, AbstractElement|float|int|string> $children */
 		parent::__construct(...$children);
 	}
 
@@ -50,8 +47,10 @@ class BlockQuote extends AbstractNestingElement implements BlockElementInterface
 	}
 
 	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
-		if( $this->fragmentLevel !== null ) {
+		if( is_int($this->fragmentLevel) ) {
 			$fragmentLevel = $this->fragmentLevel;
+		} elseif( $this->fragmentLevel === false ) {
+			$fragmentLevel = 0;
 		}
 
 		$markdown = str_replace(["\r\n", "\r"], "\n", parent::generateMarkdown($fragmentLevel));
