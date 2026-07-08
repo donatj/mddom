@@ -32,8 +32,9 @@ class BlockQuote extends AbstractNestingElement implements BlockElementInterface
 		}
 
 		$markdown = str_replace(["\r\n", "\r"], "\n", parent::generateMarkdown($fragmentLevel));
+		$markdown = trim($markdown, "\n");
 
-		return '> ' . str_replace("\n", "\n> ", trim($markdown));
+		return '> ' . str_replace("\n", "\n> ", $markdown);
 	}
 
 }
