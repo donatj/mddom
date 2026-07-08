@@ -13,16 +13,16 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
  */
 class BlockQuote extends AbstractNestingElement implements BlockElementInterface {
 
-	/** @var bool|int */
+	/** @var false|int|null */
 	protected $fragmentLevel = false;
 
 	/**
-	 * @param AbstractElement|bool|float|int|string ...$children
+	 * @param AbstractElement|float|int|null|string ...$children
 	 */
 	public function __construct( ...$children ) {
 		$this->fragmentLevel = false;
 
-		if( isset($children[0]) && (is_bool($children[0]) || is_int($children[0])) ) {
+		if( array_key_exists(0, $children) && (is_int($children[0]) || $children[0] === null) ) {
 			$this->fragmentLevel = $children[0];
 			unset($children[0]);
 			$children = array_values($children);
@@ -36,7 +36,7 @@ class BlockQuote extends AbstractNestingElement implements BlockElementInterface
 	 * @param AbstractElement|float|int|string ...$children
 	 */
 	public static function withCurrentFragmentLevel( ...$children ) : self {
-		return new self(true, ...$children);
+		return new self(null, ...$children);
 	}
 
 	/**

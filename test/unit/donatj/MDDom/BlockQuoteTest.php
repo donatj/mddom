@@ -94,7 +94,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$doc = new Document(
 			new DocumentDepth(
 				new BlockQuote(
-					true,
+					null,
 					new Header('First'),
 					new DocumentDepth(
 						new Header('Second')
