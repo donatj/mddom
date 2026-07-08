@@ -19,6 +19,7 @@ class BlockQuote extends AbstractNestingElement implements BlockElementInterface
 	/**
 	 * @param int|null                         $fragmentLevel Fragment level override. null inherits current level, int sets an explicit level (0 resets to top).
 	 * @param AbstractElement|float|int|string ...$children
+	 * @throws \InvalidArgumentException
 	 */
 	public function __construct( ?int $fragmentLevel, ...$children ) {
 		$this->fragmentLevel = $fragmentLevel;

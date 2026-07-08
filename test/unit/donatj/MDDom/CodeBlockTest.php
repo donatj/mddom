@@ -13,7 +13,7 @@ class CodeBlockTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertSame($expected, $code->exportMarkdown());
 	}
 
-	public function codeBlockGenerationProvider() : \Generator {
+	public static function codeBlockGenerationProvider() : \Generator {
 		yield 'plain code block without language' => [
 			"foo",
 			"",

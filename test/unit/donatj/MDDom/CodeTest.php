@@ -13,7 +13,7 @@ class CodeTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertEquals($expected, $code->exportMarkdown());
 	}
 
-	public function backtickNumbersProvider() : \Generator {
+	public static function backtickNumbersProvider() : \Generator {
 		yield 'no backticks' => [ 'foo', '`foo`' ];
 		yield 'mixed backtick lengths' => [ 'f`o```o`aasdasd`a`a``a', '````f`o```o`aasdasd`a`a``a````' ];
 		yield 'multiline with backticks' => [ "a\n```b\n````````\n\nc", "`````````a\n```b\n````````\n\nc`````````" ];

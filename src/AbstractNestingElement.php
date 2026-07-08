@@ -13,6 +13,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 	 * AbstractNestingElement constructor.
 	 *
 	 * @param AbstractElement|float|int|string ...$children Child Elements to Append
+	 * @throws \InvalidArgumentException
 	 */
 	public function __construct( ...$children ) {
 		$this->appendChild(...$children);

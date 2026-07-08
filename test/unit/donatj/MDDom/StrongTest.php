@@ -12,7 +12,7 @@ class StrongTest extends \PHPUnit\Framework\TestCase {
 		$this->assertSame($expected, $strong->exportMarkdown());
 	}
 
-	public function exportMarkdownProvider() : \Generator {
+	public static function exportMarkdownProvider() : \Generator {
 		yield 'single word' => [ 'hello', '**hello**' ];
 		yield 'multiple words' => [ 'hello world', '**hello world**' ];
 	}

@@ -1,4 +1,10 @@
 parameters:
-	level: 8
+	level: max
 	paths:
 		- src
+	checkTooWideThrowTypesInProtectedAndPublicMethods: true
+	exceptions:
+		implicitThrows: false
+		check:
+			missingCheckedExceptionInThrows: true
+			tooWideImplicitThrowType: true
