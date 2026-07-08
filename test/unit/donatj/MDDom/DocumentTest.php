@@ -5,8 +5,11 @@ namespace donatj\MDDom;
 class DocumentTest extends \PHPUnit\Framework\TestCase {
 
 	public function test_exportMarkdown_trimsLeadingAndTrailingWhitespace() : void {
-		$doc = new Document(new HorizontalRule);
-		$this->assertSame('---', $doc->exportMarkdown());
+		$doc = new Document(
+			new HorizontalRule,
+			new Text("tail\n\n")
+		);
+		$this->assertSame("---\n\ntail", $doc->exportMarkdown());
 	}
 
 	public function test_exportMarkdown_multipleBlockChildren() : void {
