@@ -4,6 +4,7 @@ parameters:
 		- src
 	checkTooWideThrowTypesInProtectedAndPublicMethods: true
 	exceptions:
+		implicitThrows: false
 		check:
 			missingCheckedExceptionInThrows: true
 			tooWideImplicitThrowType: true
