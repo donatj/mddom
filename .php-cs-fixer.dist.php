@@ -17,7 +17,7 @@ return (new PhpCsFixer\Config)
 	->setRiskyAllowed(true)
 	->setRules(
 		[
-			'@PHPUnit84Migration:risky'              => true,
+			'@PHPUnit9x1Migration:risky'              => true,
 			'php_unit_test_case_static_method_calls' => [
 				'call_type' => 'this',
 			],
@@ -26,7 +26,7 @@ return (new PhpCsFixer\Config)
 				'spacing' => 'one',
 			],
 
-			'visibility_required' => [
+			'modifier_keywords' => [
 				'elements' => [ 'property', 'method' ],
 			],
 			'indentation_type'    => true,
@@ -44,6 +44,7 @@ return (new PhpCsFixer\Config)
 			'array_indentation' => true,
 
 			'no_whitespace_in_blank_line' => true,
+			'no_trailing_whitespace'      => true,
 
 			'phpdoc_add_missing_param_annotation' => [ 'only_untyped' => true, ],
 			'phpdoc_indent'                       => true,
@@ -86,11 +87,12 @@ return (new PhpCsFixer\Config)
 			'no_unneeded_control_parentheses' => true,
 
 			'return_type_declaration' => [
-				'space_before' => 'one',
+				'space_before' => 'none',
 			],
 
 			'single_line_after_imports'          => true,
 			'single_blank_line_before_namespace' => true,
+			'single_line_comment_spacing'        => true,
 			'blank_line_after_namespace'         => true,
 			'single_blank_line_at_eof'           => true,
 			'ternary_to_null_coalescing'         => true,
@@ -125,6 +127,8 @@ return (new PhpCsFixer\Config)
 			'escape_implicit_backslashes' => true,
 			'explicit_indirect_variable'  => true,
 			'heredoc_to_nowdoc'           => true,
+			'heredoc_indentation'         => true,
+
 
 			'no_singleline_whitespace_before_semicolons' => true,
 			'no_null_property_initialization'            => true,
@@ -162,7 +166,10 @@ return (new PhpCsFixer\Config)
 				'import_functions' => false,
 			],
 
-			'trailing_comma_in_multiline' => true,
+			'trailing_comma_in_multiline' => [
+				'elements'      => [ 'arrays', 'arguments', 'parameters', 'match' ],
+				'after_heredoc' => true,
+			],
 			'single_line_comment_style'   => true,
 
 			'is_null'    => true,
@@ -171,6 +178,13 @@ return (new PhpCsFixer\Config)
 				'identical'        => false,
 				'less_and_greater' => null,
 			],
+
+			'empty_loop_condition' => [
+				'style' => 'for',
+			],
+
+			'native_function_casing'         => true,
+			'native_type_declaration_casing' => true,
 		]
 	)
 	->setFinder($finder);

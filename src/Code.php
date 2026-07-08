@@ -24,7 +24,7 @@ class Code extends AbstractElement {
 	/**
 	 * @todo handle strings that start or end with backtick
 	 */
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		$max = 0;
 		preg_match_all('/`+/', $this->source, $result, PREG_PATTERN_ORDER);
 		if( $result[0] ) {

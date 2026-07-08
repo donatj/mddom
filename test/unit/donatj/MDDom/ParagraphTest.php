@@ -4,20 +4,20 @@ namespace donatj\MDDom;
 
 class ParagraphTest extends \AbstractMarkdownParsingTestCase {
 
-	public function test_exportMarkdown_singleParagraph() : void {
+	public function test_exportMarkdown_singleParagraph(): void {
 		$doc = new Document(new Paragraph('Hello World'));
 		$this->assertSame('Hello World', $doc->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_multipleParagraphsSeparatedByBlankLine() : void {
+	public function test_exportMarkdown_multipleParagraphsSeparatedByBlankLine(): void {
 		$doc = new Document(
 			new Paragraph('First'),
-			new Paragraph('Second')
+			new Paragraph('Second'),
 		);
 		$this->assertSame("First\n\nSecond", $doc->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_htmlOutput() : void {
+	public function test_exportMarkdown_htmlOutput(): void {
 		$doc = new Document(new Paragraph('Hello World'));
 		$this->assertEquals(
 			[
@@ -29,15 +29,15 @@ class ParagraphTest extends \AbstractMarkdownParsingTestCase {
 					],
 				],
 			],
-			$this->getDocStruct($doc)
+			$this->getDocStruct($doc),
 		);
 	}
 
-	public function test_exportMarkdown_withInlineChildren() : void {
+	public function test_exportMarkdown_withInlineChildren(): void {
 		$para = new Paragraph(
 			new Strong(new Text('bold')),
 			new Text(' and '),
-			new Emphasis(new Text('italic'))
+			new Emphasis(new Text('italic')),
 		);
 		$doc = new Document($para);
 		$this->assertSame('**bold** and *italic*', $doc->exportMarkdown());

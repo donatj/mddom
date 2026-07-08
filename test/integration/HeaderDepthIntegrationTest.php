@@ -20,14 +20,14 @@ class HeaderDepthIntegrationTest extends AbstractMarkdownParsingTestCase {
 								new MDDom\DocumentDepth(
 									new MDDom\Header("String 7"),
 									new MDDom\DocumentDepth(
-										new MDDom\Header("String 8")
-									)
-								)
-							)
-						)
-					)
-				)
-			)
+										new MDDom\Header("String 8"),
+									),
+								),
+							),
+						),
+					),
+				),
+			),
 		);
 
 		$expected = [

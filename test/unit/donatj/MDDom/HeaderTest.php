@@ -7,12 +7,12 @@ class HeaderTest extends \PHPUnit\Framework\TestCase {
 	/**
 	 * @dataProvider headerLevelProvider
 	 */
-	public function test_exportMarkdown_levels( int $fragmentLevel, string $expected ) : void {
+	public function test_exportMarkdown_levels( int $fragmentLevel, string $expected ): void {
 		$header = new Header('Heading');
 		$this->assertSame($expected, $header->exportMarkdown($fragmentLevel));
 	}
 
-	public static function headerLevelProvider() : \Generator {
+	public static function headerLevelProvider(): \Generator {
 		yield 'h1 at depth 0' => [ 0, "\n\n# Heading" ];
 		yield 'h2 at depth 1' => [ 1, "\n\n## Heading" ];
 		yield 'h3 at depth 2' => [ 2, "\n\n### Heading" ];
@@ -23,15 +23,15 @@ class HeaderTest extends \PHPUnit\Framework\TestCase {
 		yield 'overflow at depth 7 uses two plus signs' => [ 7, "\n\n######++ Heading" ];
 	}
 
-	public function test_exportMarkdown_withinDocument() : void {
+	public function test_exportMarkdown_withinDocument(): void {
 		$doc = new Document(new Header('Title'));
 		$this->assertSame('# Title', $doc->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_withInlineChildren() : void {
+	public function test_exportMarkdown_withInlineChildren(): void {
 		$header = new Header(
 			new Strong(new Text('Bold')),
-			new Text(' Title')
+			new Text(' Title'),
 		);
 		$doc = new Document($header);
 		$this->assertSame('# **Bold** Title', $doc->exportMarkdown());

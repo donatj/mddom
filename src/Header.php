@@ -15,7 +15,7 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
  */
 class Header extends AbstractNestingElement implements BlockElementInterface {
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		$display = max($fragmentLevel, 0) + 1;
 
 		return str_repeat("#", min($display, 6)) .

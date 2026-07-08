@@ -7,12 +7,12 @@ class ImageTest extends \AbstractMarkdownParsingTestCase {
 	/**
 	 * @dataProvider imageMarkdownProvider
 	 */
-	public function test_exportMarkdown( string $src, string $alt, string $title, string $expected ) : void {
+	public function test_exportMarkdown( string $src, string $alt, string $title, string $expected ): void {
 		$img = new Image($src, $alt, $title);
 		$this->assertSame($expected, $img->exportMarkdown());
 	}
 
-	public static function imageMarkdownProvider() : \Generator {
+	public static function imageMarkdownProvider(): \Generator {
 		yield 'without title' => [ 'https://example.com/img.png', 'alt text', '', '![alt text](https://example.com/img.png)' ];
 		yield 'with title' => [ 'https://example.com/img.png', 'alt text', 'hover title', '![alt text](https://example.com/img.png "hover title")' ];
 		yield 'relative path' => [ '/images/photo.jpg', 'a photo', '', '![a photo](/images/photo.jpg)' ];
@@ -21,7 +21,7 @@ class ImageTest extends \AbstractMarkdownParsingTestCase {
 	/**
 	 * @dataProvider imageHtmlProvider
 	 */
-	public function test_exportMarkdown_htmlOutput( string $url, string $alt, string $title ) : void {
+	public function test_exportMarkdown_htmlOutput( string $url, string $alt, string $title ): void {
 		$img = new Image($url, $alt, $title);
 
 		$elm = $this->domFromDoc($img);
@@ -43,7 +43,7 @@ class ImageTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertEquals($expected, $this->getDomElementStruct($img));
 	}
 
-	public static function imageHtmlProvider() : \Generator {
+	public static function imageHtmlProvider(): \Generator {
 		yield 'without title' => [ 'http://example.com/foo.png', 'alt text', '' ];
 		yield 'with title' => [ 'https://example.com/bar.png', 'alt text', 'has title' ];
 		yield 'url with query params and quoted text' => [ '/baz.jpg?width=100', 'has "quotes"', 'booo' ];
