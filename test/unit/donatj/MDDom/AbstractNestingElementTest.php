@@ -76,6 +76,16 @@ class AbstractNestingElementTest extends \PHPUnit\Framework\TestCase {
 		$this->assertNull($doc->getNextSiblingOf($second));
 	}
 
+	public function test_getNextSiblingOf_returnsNull_whenChildNotFound() : void {
+		$doc     = new Document;
+		$first   = new Text('first');
+		$second  = new Text('second');
+		$outside = new Text('outside');
+		$doc->appendChild($first, $second);
+
+		$this->assertNull($doc->getNextSiblingOf($outside));
+	}
+
 	public function test_getPreviousSiblingOf_returnsPreviousSibling() : void {
 		$doc    = new Document;
 		$first  = new Text('first');
