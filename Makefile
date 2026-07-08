@@ -9,6 +9,7 @@ test:
 lint:
 	vendor/bin/phpcs
 	vendor/bin/php-cs-fixer fix --dry-run
+	vendor/bin/phpstan analyse --no-progress
 
 .PHONY: fix
 fix:

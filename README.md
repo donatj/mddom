@@ -13,7 +13,7 @@ A Simple Easy To Use Way to Generate Markdown Using a "DOM" Like Interface
 
 ## Requirements
 
-- **php**: >=7.2
+- **php**: >=7.4
 
 ## Installing
 

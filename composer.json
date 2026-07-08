@@ -2,7 +2,7 @@
 	"name": "donatj/mddom",
 	"description": "A Simple Markdown DOM",
 	"require": {
-		"php": ">=7.2"
+		"php": ">=7.4"
 	},
 	"require-dev": {
 		"ext-dom": "*",
@@ -12,7 +12,8 @@
 		"erusev/parsedown": "^1.7",
 		"friendsofphp/php-cs-fixer": "^3.3",
 		"squizlabs/php_codesniffer": "^3.7",
-		"corpus/coding-standard": "^0.6.0"
+		"corpus/coding-standard": "^0.6.0",
+		"phpstan/phpstan": "^2.2"
 	},
 	"license": "MIT",
 	"authors": [
