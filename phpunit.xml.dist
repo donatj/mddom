@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="test/bootstrap.php" backupGlobals="false">
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="test/bootstrap.php" backupGlobals="false"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd" cacheDirectory=".phpunit.cache">
+	<coverage>
+		<include>
+			<directory suffix=".php">./src</directory>
+		</include>
+	</coverage>
 	<testsuites>
 		<testsuite name="unit">
 			<directory>test/unit</directory>
@@ -8,10 +14,4 @@
 			<directory>test/integration</directory>
 		</testsuite>
 	</testsuites>
-
-	<filter>
-		<whitelist>
-			<directory suffix=".php">./src</directory>
-		</whitelist>
-	</filter>
 </phpunit>
