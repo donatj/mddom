@@ -6,6 +6,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 
 	public function test_exportMarkdown_simple() : void {
 		$bq = new BlockQuote(
+			false,
 			new Paragraph('Hello World')
 		);
 
@@ -29,6 +30,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 
 	public function test_exportMarkdown_multiline() : void {
 		$bq = new BlockQuote(
+			false,
 			new Paragraph('Line one'),
 			new Paragraph('Line two')
 		);
@@ -58,6 +60,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 	public function test_exportMarkdown_unixNewlines() : void {
 		$doc = new Document(
 			new BlockQuote(
+				false,
 				new Text("Line one\nLine two")
 			)
 		);
@@ -68,6 +71,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 	public function test_exportMarkdown_windowsNewlines() : void {
 		$doc = new Document(
 			new BlockQuote(
+				false,
 				new Text("Line one\r\nLine two")
 			)
 		);
@@ -79,6 +83,7 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$doc = new Document(
 			new DocumentDepth(
 				new BlockQuote(
+					false,
 					new Header('First'),
 					new DocumentDepth(
 						new Header('Second')
@@ -90,10 +95,11 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertSame("> # First\n> \n> ## Second", $doc->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_headers_withCurrentFragmentLevelConstructor() : void {
+	public function test_exportMarkdown_headers_withCurrentFragmentLevel() : void {
 		$doc = new Document(
 			new DocumentDepth(
-				BlockQuote::withCurrentFragmentLevel(
+				new BlockQuote(
+					null,
 					new Header('First'),
 					new DocumentDepth(
 						new Header('Second')
@@ -105,10 +111,10 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertSame("> ## First\n> \n> ### Second", $doc->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_headers_withCustomFragmentLevelConstructor() : void {
+	public function test_exportMarkdown_headers_withCustomFragmentLevel() : void {
 		$doc = new Document(
 			new DocumentDepth(
-				BlockQuote::withFragmentLevel(
+				new BlockQuote(
 					3,
 					new Header('First'),
 					new DocumentDepth(
