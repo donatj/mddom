@@ -6,37 +6,28 @@ class CodeBlockTest extends \AbstractMarkdownParsingTestCase {
 
 	/**
 	 * @dataProvider codeBlockGenerationProvider
-	 *
-	 * @param string $source
-	 * @param string $lang
-	 * @param string $expcted
 	 */
-	public function test_codeBlock_generation( $source, $lang, $expcted ) {
+	public function test_codeBlock_generation( string $source, ?string $lang, string $expected ) : void {
 		$code = new CodeBlock($source, $lang);
 
-		$this->assertSame($expcted, $code->exportMarkdown());
+		$this->assertSame($expected, $code->exportMarkdown());
 	}
 
-	public function codeBlockGenerationProvider() {
-		return [
-			[ "foo", "", <<<MD
-\n\n```
-foo
-```
-MD
-				,
-			],
-			[ "a\n```\ncode block in code block\n```\nand some more text", "", <<<MD
-\n\n````
-a
-```
-code block in code block
-```
-and some more text
-````
-MD
-				,
-			],
+	public function codeBlockGenerationProvider() : \Generator {
+		yield 'plain code block without language' => [
+			"foo",
+			"",
+			"\n\n```\nfoo\n```",
+		];
+		yield 'code block containing triple backticks' => [
+			"a\n```\ncode block in code block\n```\nand some more text",
+			"",
+			"\n\n````\na\n```\ncode block in code block\n```\nand some more text\n````",
+		];
+		yield 'code block with language' => [
+			"echo 'hello';",
+			"php",
+			"\n\n```php\necho 'hello';\n```",
 		];
 	}
 

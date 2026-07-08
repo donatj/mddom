@@ -75,6 +75,9 @@ abstract class AbstractNestingElement extends AbstractElement {
 	 */
 	public function getNextSiblingOf( AbstractElement $element ) : ?AbstractElement {
 		$index = $this->indexOf($element);
+		if ($index === null) {
+			return null;
+		}
 
 		return $this->childAtIndex($index + 1);
 	}

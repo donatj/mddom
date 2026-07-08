@@ -4,86 +4,85 @@ namespace donatj\MDDom;
 
 class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 
-	public function test_exportMarkdown_simple() : void {
-		$bq = new BlockQuote(
-			0,
-			new Paragraph('Hello World')
-		);
+	/**
+	 * @dataProvider blockQuoteHtmlProvider
+	 */
+	public function test_exportMarkdown_htmlOutput( BlockQuote $blockQuote, array $expected ) : void {
+		$this->assertEquals($expected, $this->getDocStruct($blockQuote));
+	}
 
-		$expected = [
-			'tag'      => 'body',
-			'children' => [
-				[
-					'tag'      => 'blockquote',
-					'children' => [
-						[
-							'tag'      => 'p',
-							'children' => [ 'Hello World' ],
+	public function blockQuoteHtmlProvider() : \Generator {
+		yield 'single paragraph' => [
+			new BlockQuote(
+				0,
+				new Paragraph('Hello World')
+			),
+			[
+				'tag'      => 'body',
+				'children' => [
+					[
+						'tag'      => 'blockquote',
+						'children' => [
+							[
+								'tag'      => 'p',
+								'children' => [ 'Hello World' ],
+							],
 						],
 					],
 				],
 			],
 		];
 
-		$this->assertEquals($expected, $this->getDocStruct($bq));
-	}
-
-	public function test_exportMarkdown_multiline() : void {
-		$bq = new BlockQuote(
-			0,
-			new Paragraph('Line one'),
-			new Paragraph('Line two')
-		);
-
-		$expected = [
-			'tag'      => 'body',
-			'children' => [
-				[
-					'tag'      => 'blockquote',
-					'children' => [
-						[
-							'tag'      => 'p',
-							'children' => [ 'Line one' ],
-						],
-						[
-							'tag'      => 'p',
-							'children' => [ 'Line two' ],
+		yield 'multiple paragraphs' => [
+			new BlockQuote(
+				0,
+				new Paragraph('Line one'),
+				new Paragraph('Line two')
+			),
+			[
+				'tag'      => 'body',
+				'children' => [
+					[
+						'tag'      => 'blockquote',
+						'children' => [
+							[
+								'tag'      => 'p',
+								'children' => [ 'Line one' ],
+							],
+							[
+								'tag'      => 'p',
+								'children' => [ 'Line two' ],
+							],
 						],
 					],
 				],
 			],
 		];
-
-		$this->assertEquals($expected, $this->getDocStruct($bq));
 	}
 
-	public function test_exportMarkdown_unixNewlines() : void {
+	/**
+	 * @dataProvider newlineNormalizationProvider
+	 */
+	public function test_exportMarkdown_normalizesNewlines( string $text, string $expected ) : void {
 		$doc = new Document(
-			new BlockQuote(
-				0,
-				new Text("Line one\nLine two")
-			)
+			new BlockQuote(0, new Text($text))
 		);
-
-		$this->assertSame("> Line one\n> Line two", $doc->exportMarkdown());
+		$this->assertSame($expected, $doc->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_windowsNewlines() : void {
-		$doc = new Document(
-			new BlockQuote(
-				0,
-				new Text("Line one\r\nLine two")
-			)
-		);
-
-		$this->assertSame("> Line one\n> Line two", $doc->exportMarkdown());
+	public function newlineNormalizationProvider() : \Generator {
+		yield 'unix newlines' => [ "Line one\nLine two", "> Line one\n> Line two" ];
+		yield 'windows newlines' => [ "Line one\r\nLine two", "> Line one\n> Line two" ];
 	}
 
-	public function test_exportMarkdown_headers_defaultFragmentLevel() : void {
+	/**
+	 * @dataProvider headerFragmentLevelProvider
+	 */
+	public function test_exportMarkdown_headerFragmentLevel( ?int $fragmentLevel, string $expected ) : void {
 		$doc = new Document(
 			new DocumentDepth(
 				new BlockQuote(
-					0,
+					$fragmentLevel,
 					new Header('First'),
 					new DocumentDepth(
 						new Header('Second')
@@ -91,40 +90,13 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 				)
 			)
 		);
-
-		$this->assertSame("> # First\n> \n> ## Second", $doc->exportMarkdown());
+		$this->assertSame($expected, $doc->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_headers_withCurrentFragmentLevel() : void {
-		$doc = new Document(
-			new DocumentDepth(
-				new BlockQuote(
-					null,
-					new Header('First'),
-					new DocumentDepth(
-						new Header('Second')
-					)
-				)
-			)
-		);
-
-		$this->assertSame("> ## First\n> \n> ### Second", $doc->exportMarkdown());
-	}
-
-	public function test_exportMarkdown_headers_withCustomFragmentLevel() : void {
-		$doc = new Document(
-			new DocumentDepth(
-				new BlockQuote(
-					3,
-					new Header('First'),
-					new DocumentDepth(
-						new Header('Second')
-					)
-				)
-			)
-		);
-
-		$this->assertSame("> #### First\n> \n> ##### Second", $doc->exportMarkdown());
+	public function headerFragmentLevelProvider() : \Generator {
+		yield 'reset to top level' => [ 0, "> # First\n> \n> ## Second" ];
+		yield 'inherits current level' => [ null, "> ## First\n> \n> ### Second" ];
+		yield 'explicit level 3' => [ 3, "> #### First\n> \n> ##### Second" ];
 	}
 
 }
