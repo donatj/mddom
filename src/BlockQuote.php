@@ -17,7 +17,7 @@ class BlockQuote extends AbstractNestingElement implements BlockElementInterface
 	protected $fragmentLevel = false;
 
 	/**
-	 * @param AbstractElement|float|int|null|string ...$children
+	 * @param AbstractElement|float|int|string|null ...$children
 	 */
 	public function __construct( ...$children ) {
 		$this->fragmentLevel = false;
