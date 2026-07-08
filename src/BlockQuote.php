@@ -16,7 +16,7 @@ class BlockQuote extends AbstractNestingElement implements BlockElementInterface
 	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
 		$markdown = parent::generateMarkdown($fragmentLevel);
 
-		return preg_replace('/^/m', '> ', trim($markdown));
+		return '> ' . str_replace("\n", "\n> ", trim($markdown));
 	}
 
 }
