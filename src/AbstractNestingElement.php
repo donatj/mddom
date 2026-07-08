@@ -26,7 +26,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 	 * @throws \InvalidArgumentException
 	 * @return $this
 	 */
-	public function appendChild( ...$children ) : AbstractNestingElement {
+	public function appendChild( ...$children ): AbstractNestingElement {
 		foreach( $children as $child ) {
 			if( $child instanceof AbstractElement ) {
 				$inject = $child;
@@ -48,12 +48,12 @@ abstract class AbstractNestingElement extends AbstractElement {
 	 *
 	 * @return bool False if the given element was not found.
 	 */
-	public function removeChild( AbstractElement $element ) : bool {
+	public function removeChild( AbstractElement $element ): bool {
 		$index = $this->indexOf($element);
 		if( $index !== null ) {
 			unset($this->childElements[$index]);
 
-			//Remove any gaps
+			// Remove any gaps
 			$this->childElements = array_values($this->childElements);
 
 			return true;
@@ -65,7 +65,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 	/**
 	 * Get the index of a child element or null if not found.
 	 */
-	public function indexOf( AbstractElement $element ) : ?int {
+	public function indexOf( AbstractElement $element ): ?int {
 		$search_result = array_search($element, $this->childElements, true);
 
 		return is_int($search_result) ? $search_result : null;
@@ -74,7 +74,7 @@ abstract class AbstractNestingElement extends AbstractElement {
 	/**
 	 * Get the next sibling of a given child element or null if not found
 	 */
-	public function getNextSiblingOf( AbstractElement $element ) : ?AbstractElement {
+	public function getNextSiblingOf( AbstractElement $element ): ?AbstractElement {
 		$index = $this->indexOf($element);
 		if ($index === null) {
 			return null;
@@ -86,20 +86,20 @@ abstract class AbstractNestingElement extends AbstractElement {
 	/**
 	 * Gets the child element at a given index or null if not found.
 	 */
-	public function childAtIndex( int $index ) : ?AbstractElement {
+	public function childAtIndex( int $index ): ?AbstractElement {
 		return $this->childElements[$index] ?? null;
 	}
 
 	/**
 	 * Get the previous sibling of a given child element or null if not found
 	 */
-	public function getPreviousSiblingOf( AbstractElement $element ) : ?AbstractElement {
+	public function getPreviousSiblingOf( AbstractElement $element ): ?AbstractElement {
 		$index = $this->indexOf($element);
 
 		return $this->childAtIndex($index - 1);
 	}
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		$return = "";
 
 		foreach( $this->childElements as $childElement ) {

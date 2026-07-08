@@ -27,7 +27,7 @@ class BlockQuote extends AbstractNestingElement implements BlockElementInterface
 		parent::__construct(...$children);
 	}
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		if( $this->fragmentLevel !== null ) {
 			$fragmentLevel = $this->fragmentLevel;
 		}

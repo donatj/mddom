@@ -27,7 +27,7 @@ class Image extends AbstractElement {
 		$this->title = $title;
 	}
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		$title = $this->title ? ' "' . $this->title . '"' : '';
 
 		return "![{$this->alt}]({$this->src}{$title})";

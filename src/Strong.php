@@ -11,7 +11,7 @@ namespace donatj\MDDom;
  */
 class Strong extends AbstractNestingElement {
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		$return = "**";
 		$return .= parent::generateMarkdown($fragmentLevel);
 		$return .= "**";

@@ -17,7 +17,7 @@ class Text extends AbstractElement {
 		$this->text = $text;
 	}
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		return $this->text;
 	}
 

@@ -4,17 +4,17 @@ namespace donatj\MDDom;
 
 class HorizontalRuleTest extends \AbstractMarkdownParsingTestCase {
 
-	public function test_exportMarkdown_standalone() : void {
+	public function test_exportMarkdown_standalone(): void {
 		$hr = new HorizontalRule;
 		$this->assertSame("\n\n---", $hr->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_withinDocument() : void {
+	public function test_exportMarkdown_withinDocument(): void {
 		$doc = new Document(new HorizontalRule);
 		$this->assertSame('---', $doc->exportMarkdown());
 	}
 
-	public function test_exportMarkdown_htmlOutput() : void {
+	public function test_exportMarkdown_htmlOutput(): void {
 		$hr = new HorizontalRule;
 		$this->assertEquals(
 			[
@@ -23,15 +23,15 @@ class HorizontalRuleTest extends \AbstractMarkdownParsingTestCase {
 					[ 'tag' => 'hr', 'children' => [] ],
 				],
 			],
-			$this->getDocStruct($hr)
+			$this->getDocStruct($hr),
 		);
 	}
 
-	public function test_exportMarkdown_betweenParagraphs() : void {
+	public function test_exportMarkdown_betweenParagraphs(): void {
 		$doc = new Document(
 			new Paragraph('Before'),
 			new HorizontalRule,
-			new Paragraph('After')
+			new Paragraph('After'),
 		);
 		$this->assertSame("Before\n\n---\n\nAfter", $doc->exportMarkdown());
 	}

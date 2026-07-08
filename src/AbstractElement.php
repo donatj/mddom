@@ -15,7 +15,7 @@ abstract class AbstractElement {
 	 * @param int $fragmentLevel Private use - recursion depth counter
 	 * @return string Markdown
 	 */
-	public function exportMarkdown( int $fragmentLevel = 0 ) : string {
+	public function exportMarkdown( int $fragmentLevel = 0 ): string {
 		$output = "";
 		if( $this instanceof BlockElementInterface || $this->getPreviousSibling() instanceof BlockElementInterface ) {
 			$output .= "\n\n";
@@ -29,36 +29,36 @@ abstract class AbstractElement {
 	/**
 	 * Get the Current Elements Previous Sibling
 	 */
-	public function getPreviousSibling() : ?AbstractElement {
+	public function getPreviousSibling(): ?AbstractElement {
 		if( !$this->parentElement ) {
-			return null; //throw exception?
+			return null; // throw exception?
 		}
 
 		return $this->parentElement->getPreviousSiblingOf($this);
 	}
 
-	abstract protected function generateMarkdown( int $fragmentLevel = 0 ) : string;
+	abstract protected function generateMarkdown( int $fragmentLevel = 0 ): string;
 
 	/**
 	 * @access private
 	 */
-	public function _setParent( AbstractNestingElement $element ) : void {
+	public function _setParent( AbstractNestingElement $element ): void {
 		$this->parentElement = $element;
 	}
 
 	/**
 	 * Get the Elements Parent or Null if Top Level
 	 */
-	public function getParentElement() : ?AbstractElement {
+	public function getParentElement(): ?AbstractElement {
 		return $this->parentElement;
 	}
 
 	/**
 	 * Get the Current Elements Next Sibling
 	 */
-	public function getNextSibling() : ?AbstractElement {
+	public function getNextSibling(): ?AbstractElement {
 		if( !$this->parentElement ) {
-			return null; //throw exception?
+			return null; // throw exception?
 		}
 
 		return $this->parentElement->getNextSiblingOf($this);

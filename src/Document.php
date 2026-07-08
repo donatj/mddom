@@ -7,7 +7,7 @@ namespace donatj\MDDom;
  */
 class Document extends AbstractNestingElement {
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		return trim(parent::generateMarkdown($fragmentLevel));
 	}
 

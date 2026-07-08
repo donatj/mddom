@@ -7,13 +7,13 @@ class CodeBlockTest extends \AbstractMarkdownParsingTestCase {
 	/**
 	 * @dataProvider codeBlockGenerationProvider
 	 */
-	public function test_codeBlock_generation( string $source, ?string $lang, string $expected ) : void {
+	public function test_codeBlock_generation( string $source, ?string $lang, string $expected ): void {
 		$code = new CodeBlock($source, $lang);
 
 		$this->assertSame($expected, $code->exportMarkdown());
 	}
 
-	public static function codeBlockGenerationProvider() : \Generator {
+	public static function codeBlockGenerationProvider(): \Generator {
 		yield 'plain code block without language' => [
 			"foo",
 			"",

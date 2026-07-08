@@ -13,7 +13,7 @@ use donatj\MDDom\Interfaces\BlockElementInterface;
  */
 class HorizontalRule extends AbstractElement implements BlockElementInterface {
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		return '---';
 	}
 

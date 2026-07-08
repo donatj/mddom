@@ -31,7 +31,7 @@ class CodeBlock extends AbstractElement implements BlockElementInterface {
 		$this->language = $language;
 	}
 
-	protected function generateMarkdown( int $fragmentLevel = 0 ) : string {
+	protected function generateMarkdown( int $fragmentLevel = 0 ): string {
 		$max = 2;
 		preg_match_all('/```+/', $this->source, $result, PREG_PATTERN_ORDER);
 		if( $result[0] ) {
