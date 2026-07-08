@@ -75,4 +75,51 @@ class BlockQuoteTest extends \AbstractMarkdownParsingTestCase {
 		$this->assertSame("> Line one\n> Line two", $doc->exportMarkdown());
 	}
 
+	public function test_exportMarkdown_headers_defaultFragmentLevel() : void {
+		$doc = new Document(
+			new DocumentDepth(
+				new BlockQuote(
+					new Header('First'),
+					new DocumentDepth(
+						new Header('Second')
+					)
+				)
+			)
+		);
+
+		$this->assertSame("> # First\n> \n> ## Second", $doc->exportMarkdown());
+	}
+
+	public function test_exportMarkdown_headers_withCurrentFragmentLevelConstructor() : void {
+		$doc = new Document(
+			new DocumentDepth(
+				new BlockQuote(
+					true,
+					new Header('First'),
+					new DocumentDepth(
+						new Header('Second')
+					)
+				)
+			)
+		);
+
+		$this->assertSame("> ## First\n> \n> ### Second", $doc->exportMarkdown());
+	}
+
+	public function test_exportMarkdown_headers_withCustomFragmentLevelConstructor() : void {
+		$doc = new Document(
+			new DocumentDepth(
+				new BlockQuote(
+					3,
+					new Header('First'),
+					new DocumentDepth(
+						new Header('Second')
+					)
+				)
+			)
+		);
+
+		$this->assertSame("> #### First\n> \n> ##### Second", $doc->exportMarkdown());
+	}
+
 }
