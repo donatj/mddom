@@ -43,8 +43,8 @@ class AnchorTest extends \AbstractMarkdownParsingTestCase {
 	}
 
 	public function anchorHtmlProvider() : \Generator {
-		yield 'without title' => [ 'http://example.com/foo.png', 'alt text', '' ];
-		yield 'with title' => [ 'https://example.com/bar.png', 'alt text', 'has title' ];
+		yield 'without title' => [ 'http://example.com', 'link text', '' ];
+		yield 'with title' => [ 'https://example.com', 'link text', 'has title' ];
 		yield 'url with query params and quoted text' => [ '/baz.jpg?width=100', 'has "quotes"', 'booo' ];
 	}
 
