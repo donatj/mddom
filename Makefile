@@ -8,7 +8,7 @@ test:
 .PHONY: lint
 lint:
 	vendor/bin/phpcs
-	vendor/bin/php-cs-fixer fix --dry-run
+	vendor/bin/php-cs-fixer fix --dry-run --diff
 	vendor/bin/phpstan analyse --no-progress
 
 .PHONY: fix
